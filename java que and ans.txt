@@ -1,36 +1,30 @@
-Polymorphism
+*************************************************************************************************************************
+Infosys Interview Quesions:
 
-spring boot life cycle : @ autiwired with setter method and with variable declaration
-
-Exception handling
-
-ClassNotFoundException & ClassDefException
-
-Error and Expection
-
-Outer joins?
-
-truncate and delete difference
-
-how spring boot runs
-
-
-which context is return by spring boot and what is use of it?
+1. Polymorphism
+2. explain method overriding with covariant data type
+4. Exception handling
+5. ClassNotFoundException & ClassDefException
+6. Error and Expection with example
+7. Outer joins?
+8. truncate and delete difference
+9. how spring boot runs
+10. which context is return by spring boot and what is use of it?
+11. spring boot life cycle 
+12. @ autiwired with setter method and with variable declaration
+13. Differnece between put and post method
 
 *************************************************************************************************************************
+C2L biz Interview quesions:
 
 Hibranate mapping type,
 Configurations required to create new project in tomcat- cong file name
-
 DDL and DML
-
 Can we write DDL in functions / procedure
 HTML type
 decorate the image in html by applying css
 meta in jsp?
-
 JDBC connection
-
 
 *************************************************************************************************************************
 
@@ -39,7 +33,6 @@ The Java Persistence API (JPA): is a specification of Java. It is used to persis
 *************************************************************************************************************************
 
 Internal view resolver : The InternalResourceViewResolver is an implementation of ViewResolver in the Spring MVC framework which resolves logical view names like "hello" to internal physical resources like Servlet and JSP files e.g. jsp files placed under the WEB-INF folder
-
 
 two class dependancy in hibranate: 
 
@@ -58,9 +51,7 @@ Life Cycle of Spring:
 
 InitializingBean or DisposableBean callbacks
 
-
 When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
-
 
 *************************************************************************************************************************
 
@@ -84,16 +75,13 @@ Setter-based DI is accomplished by the container calling setter methods on your 
 
 Bean life cycle
 *************************************************************************************************************************
-
 Post construt
 Pre destroy
 *************************************************************************************************************************
-
-MVC:
+MVC design pattern:
 *************************************************************************************************************************
 
 @Bean
-
 @Component
 @Repository
 @Service
@@ -101,6 +89,46 @@ MVC:
 @RestController
 @SpringBootApplication
 
+
+@Required: It applies to the bean setter method. It indicates that the annotated bean must be populated at configuration time with the required property, else it throws an exception BeanInitilizationException.
+
+
+@Autowired: Spring provides annotation-based auto-wiring by providing @Autowired annotation. It is used to autowire spring bean on setter methods, instance variable, and constructor. When we use @Autowired annotation, the spring container auto-wires the bean by matching data-type.
+
+
+@Configuration: It is a class-level annotation. The class annotated with @Configuration used by Spring Containers as a source of bean definitions.
+
+
+@ComponentScan: It is used when we want to scan a package for beans. It is used with the annotation @Configuration. We can also specify the base packages to scan for Spring Components.
+
+
+@Bean: It is a method-level annotation. It is an alternative of XML <bean> tag. It tells the method to produce a bean to be managed by Spring Container.
+
+@Component: It is a class-level annotation. It is used to mark a Java class as a bean. A Java class annotated with @Component is found during the classpath. The Spring Framework pick it up and configure it in the application context as a Spring Bean.
+
+@Controller: The @Controller is a class-level annotation. It is a specialization of @Component. It marks a class as a web request handler. It is often used to serve web pages. By default, it returns a string that indicates which route to redirect. It is mostly used with @RequestMapping annotation.
+
+@Service: It is also used at class level. It tells the Spring that class contains the business logic.
+
+@Repository: It is a class-level annotation. The repository is a DAOs (Data Access Object) that access the database directly. The repository does all the operations related to the database.
+
+@EnableAutoConfiguration: It auto-configures the bean that is present in the classpath and configures it to run the methods. provided an alternative of the annotation, i.e. @SpringBootApplication.
+
+@SpringBootApplication: It is a combination of three annotations @EnableAutoConfiguration, @ComponentScan, and @Configuration.
+
+@RequestMapping: It is used to map the web requests. It has many optional elements like consumes, header, method, name, params, path, produces, and value. We use it with the class as well as the method.
+
+
+
+@RequestBody: It is used to bind HTTP request with an object in a method parameter. Internally it uses HTTP MessageConverters to convert the body of the request. When we annotate a method parameter with @RequestBody, the Spring framework binds the incoming HTTP request body to that parameter.
+@ResponseBody: It binds the method return value to the response body. It tells the Spring Boot Framework to serialize a return an object into JSON and XML format.
+@RestController: It can be considered as a combination of @Controller and @ResponseBody annotations. The @RestController annotation is itself annotated with the @ResponseBody annotation. It eliminates the need for annotating each method with @ResponseBody.
+
+
+Difference
+
+1. The @Controller is a common annotation that is used to mark a class as Spring MVC Controller while @RestController is a special controller used in RESTFul web services and the equivalent of @Controller + @ResponseBody.
+2. The @Controller annotation indicates that the class is a "Controller" like a web controller while @RestController annotation indicates that the class is a controller where @RequestMapping methods assume @ResponseBody semantics by default i.e. servicing REST API.
 *************************************************************************************************************************
 
 Diff Application context and bean factory
