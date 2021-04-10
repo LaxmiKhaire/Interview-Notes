@@ -1,0 +1,1255 @@
+Polymorphism
+
+spring boot life cycle : @ autiwired with setter method and with variable declaration
+
+Exception handling
+
+ClassNotFoundException & ClassDefException
+
+Error and Expection
+
+Outer joins?
+
+truncate and delete difference
+
+how spring boot runs
+
+
+which context is return by spring boot and what is use of it?
+
+*************************************************************************************************************************
+
+Hibranate mapping type,
+Configurations required to create new project in tomcat- cong file name
+
+DDL and DML
+
+Can we write DDL in functions / procedure
+HTML type
+decorate the image in html by applying css
+meta in jsp?
+
+JDBC connection
+
+
+*************************************************************************************************************************
+
+The Java Persistence API (JPA): is a specification of Java. It is used to persist data between Java object and relational database. JPA acts as a bridge between object-oriented domain models and relational database systems.
+
+*************************************************************************************************************************
+
+Internal view resolver : The InternalResourceViewResolver is an implementation of ViewResolver in the Spring MVC framework which resolves logical view names like "hello" to internal physical resources like Servlet and JSP files e.g. jsp files placed under the WEB-INF folder
+
+
+two class dependancy in hibranate: 
+
+get load diff
+
+jpa and hibarnate: JPA is a standard, while Hibernate is not. In hibernate, we use Session for handling the persistence of data, while in JPA, we use Entity Manager. The query language in Hibernate is Hibernate Query language, while in JPA, the query language is Java Persistence query language. Hibernate is one of the most JPA providers.
+
+early and lazy load
+*************************************************************************************************************************
+
+@AutoWired: Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection. Autowiring can't be used to inject primitive and string values. Dependency Injection is a design pattern, and @autowired is a mechanism for implementing it.
+
+*************************************************************************************************************************
+
+Life Cycle of Spring:
+
+InitializingBean or DisposableBean callbacks
+
+
+When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
+
+
+*************************************************************************************************************************
+
+Const
+setter
+field
+*************************************************************************************************************************
+
+IOC
+*************************************************************************************************************************
+
+DI
+
+
+1	Constructor-based dependency injection
+Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on the other class.
+
+2	Setter-based dependency injection
+Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.
+*************************************************************************************************************************
+
+Bean life cycle
+*************************************************************************************************************************
+
+Post construt
+Pre destroy
+*************************************************************************************************************************
+
+MVC:
+*************************************************************************************************************************
+
+@Bean
+
+@Component
+@Repository
+@Service
+@Controller
+@RestController
+@SpringBootApplication
+
+*************************************************************************************************************************
+
+Diff Application context and bean factory
+
+*************************************************************************************************************************
+
+Debugging and Exception handlin in spring
+how to build war or execute spring..... commond to build using maven
+
+*************************************************************************************************************************
+
+artifactId and groupID differnce
+
+*************************************************************************************************************************
+
+gradule
+
+
+*************************************************************************************************************************
+1. Swap two string var without using third string vari
+
+a="l",b="k"
+
+a=a+b
+b=a.sunstring(0,a.length-b.length)
+a=a.substring(b.length)
+*************************************************************************************************************************
+
+2. Singly LinkedList -check palidrome or not.
+
+*************************************************************************************************************************
+
+3. flatmap and map difference
+
+map and flatMap can be applied to a Stream<T> and they both return a Stream<R>. The difference is that the map operation produces one output value for each input value, whereas the flatMap operation produces an arbitrary number (zero or more) values for each input value.
+
+This is reflected in the arguments to each operation.
+
+The map operation takes a Function, which is called for each value in the input stream and produces one result value, which is sent to the output stream.
+*************************************************************************************************************************
+4. Intermidate function
+filter():
+
+Returns a stream consisting of the elements of this stream that
+match the given predicate.
+
+Syntax:
+Stream filter​(Predicate predicate)
+Example:
+Stream intStream = Stream.of(1, 2, 3, 4, 5);
+Stream subStream = intStream.filter(value -> value > 3);
+long count = subStream.count();
+System.out.println(count);
+
+output: 2
+
+
+
+map():
+Returns a stream consisting of the results of applying the given function to the elements of this stream.
+
+Syntax: 
+Stream map​(Function mapper)
+Example:
+// map() Operation
+Stream strStream = Stream.of("Welcome", "To", "java", "blog");
+Stream subStream2 = strStream.map(string -> {
+ if (string == "java")
+  return "Java-W3schools";
+ return string;
+});
+List welomeList = subStream2.collect(Collectors.toList());
+System.out.println(welomeList);
+Here, map function takes an argument type of Function. The function is a functional interface and has a method
+apply(). This method takes a value and returns another value.
+
+Output:[Welcome, To, Java-W3schools, blog]
+In this example, replacing the word “java” with “Java-W3schools”.
+map() wrpper types are also comes under intermediate operations category.
+mapToDouble(), mapToLong(), mapToInt()
+
+
+flatMap()
+This flatmap works best for a list of collections. We will show the example with two lists and how to convert them into a single stream using
+flatmap() method.
+
+syntax:
+Stream flatMap​(Function> mapper)
+Example:
+Example program to count the number of unique fruit names from two lists.
+
+Stream flatStream = stream.flatMap(list -> list.stream());
+//flatStream.forEach(str -> System.out.println(str));
+long distinctFruites = flatStream.distinct().count();
+System.out.println(distinctFruites);
+Output:
+6
+And also see the most common problem with solution when working with Stream “stream has already been operated upon or closed“. After uncomming line flatStream.forEach(str -> System.out.println(str)); this program will exception java.lang.IllegalStateException.
+Similar flatMap() methods for wrapper types such as flatMapToInt(), flatMapToLong(), flatMapToDouble().
+
+
+distinct():Returns a stream consisting of the distinct elements
+
+sorted(): Returns a stream consisting of the elements of this stream, sorted according to the natural order.
+
+peek():
+Returns a stream consisting of the elements of this stream, additionally performing the provided action on each element as elements are consumed from the resulting stream.
+peek() method is the best way to debug the streams in Java 8. The eclipse will not support for debugging.
+Note: We can not predict the order of peek() invocation for parallel stream pipelines.
+
+limit(): 
+Returns a stream with the limited size given. It will truncate the remaining elements from the stream.
+Note: limit() is suitable for sequential streams and cannot give good performance results for parallel streams.
+
+
+skip():This method skips the given n elements and returns a Stream. This is the most useful when want to perform any operations on last n records or lines from a List or Stream.
+
+ 
+*************************************************************************************************************************
+Debugging in STS:
+
+Select Window-->Show View--> Servers. Right Click on server in the Servers panel,
+
+Select "Restart in Dedug" or Debug option,
+
+Add breakpoints in your code,
+
+Then right click on application, Select Debug As --> Debug on Server.
+
+Use F5 to go inside method. Use F6 to go to next Statement.
+
+*************************************************************************************************************************
+
+Object class methods - 11 methods
+
+Methods of Object class
+The Object class provides many methods. They are as follows:
+Method	Description
+public final Class getClass()	returns the Class class object of this object. The Class class can further be used to get the metadata of this class.
+public int hashCode()	returns the hashcode number for this object.
+public boolean equals(Object obj)	compares the given object to this object.
+protected Object clone() throws CloneNotSupportedException	creates and returns the exact copy (clone) of this object.
+public String toString()	returns the string representation of this object.
+public final void notify()	wakes up single thread, waiting on this object's monitor.
+public final void notifyAll()	wakes up all the threads, waiting on this object's monitor.
+public final void wait(long timeout)throws InterruptedException	causes the current thread to wait for the specified milliseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait(long timeout,int nanos)throws InterruptedException	causes the current thread to wait for the specified milliseconds and nanoseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait()throws InterruptedException	causes the current thread to wait, until another thread notifies (invokes notify() or notifyAll() method).
+protected void finalize()throws Throwable	is invoked by the garbage collector before object is being garbage collected.
+
+
+
+
+*************************************************************************************************************************
+https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
+
+https://www.geeksforgeeks.org/multithreading-in-java/
+
+https://www.geeksforgeeks.org/polymorphism-in-java/
+
+https://www.geeksforgeeks.org/java-equals-compareto-equalsignorecase-and-compare/
+
+solid principles java -
+
+	1. SOLID principles are object-oriented design concepts relevant to software development. SOLID is an acronym for five other class-design principles: Single Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle. 
+	2. This principle suggests that “classes should be open for extension but closed for modification”. What is means is that if the class A is written by the developer AA, and if the developer BB wants some modification on that then developer BB should be easily do that by extending class A, but not by modifying class A.
+
+	3. Single Responsibility Principle (SRP):  states that every Java class must perform a single functionality.
+
+	4. Open-Closed Principle (OCP):  states that according to new requirements the module should be open for extension but closed for modification. 
+
+	5. Liskov Substitution Principle (LSP): It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes.  In other words, if class A is a subtype of class B, then we should be able to replace B with A without interrupting the behavior of the program.
+
+	6. Interface Segregation Principle (ISP): states that the larger interfaces split into smaller ones. Because the implementation classes use only the methods that are required. We should not force the client to use the methods that they do not want to use.
+
+	7. Dependency Inversion Principle (DIP): states that we must use abstraction (abstract classes and interfaces) instead of concrete implementations. High-level modules should not depend on the low-level module but both should depend on the abstraction. Because the abstraction does not depend on detail but the detail depends on abstraction. It decouples the software.
+
+Why should we use SOLID principles?
+	It reduces the dependencies so that a block of code can be changed without affecting the other code blocks.
+The principles intended to make design easier, understandable.
+By using the principles, the system is maintainable, testable, scalable, and reusable.
+It avoids the bad design of the software.
+
+*************************************************************************************************************************
+Design Patterns
+
+A. creational design patterns
+	1. creational design patterns are design patterns that deal with object creation mechanisms
+
+	2. Types
+		2.1 Factory Method Pattern -says that just define an interface or abstract class for creating an object but let the subclasses decide which class to instantiate.  Example Generate bill.
+		
+		2.2 Abstract Factory Pattern-says that just define an interface or abstract class for creating families of related (or dependent) objects but without specifying their concrete sub-classes.That means Abstract Factory lets a class returns a factory of classes. So, this is the reason that Abstract Factory Pattern is one level higher than the Factory Pattern. example bank account creation and diffenet loans
+		
+		2.3 Singleton Pattern- says that just"define a class that has only one instance and provides a global point of access to it". Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.
+		To create the singleton class, we need to have static member of class, private constructor and static factory method.
+
+			Static member: It gets memory only once because of static, itcontains the instance of the Singleton class.
+			Private constructor: It will prevent to instantiate the Singleton class from outside the class.
+			Static factory method: This provides the global point of access to the Singleton object and returns the instance to the caller.
+		
+		There are two forms of singleton design pattern
+				Early Instantiation: creation of instance at load time.
+				Lazy Instantiation: creation of instance when required.
+
+		Note: take care in case of multithreaded application using sychronised blocks
+
+		How to prevent Singleton Pattern from Reflection, Serialization and Cloning?
+
+		1. Reflection: To overcome issue raised by reflection, enums are used because java ensures internally that enum value is instantiated only once. Since java Enums are globally accessible, they can be used for singletons. Its only drawback is that it is not flexible i.e it does not allow lazy initialization.
+		2. Serialization issue:- To overcome this issue, we have to implement method readResolve() method.
+		3. Overcome Cloning issue:- To overcome this issue, override clone() method and throw an exception from clone method that is CloneNotSupportedException. Now whenever user will try to create clone of singleton object, it will throw exception and hence our class remains singleton.
+
+		
+
+		2.4 Prototype Pattern: says that cloning of an existing object instead of creating new one and can also be customized as per the requirement.This pattern should be followed, if the cost of creating a new object is expensive and resource intensive.
+
+		To use it, implement Prototype Interface and override  public Prototype getClone() { return new ClassName(parameters);  } method
+
+
+		2.5 Builder Pattern: says that "construct a complex object from simple objects using step-by-step approach" 
+		Example: business case of pizza-hut where we can get different varieties of pizza and cold-drink., Project-Alarm Example.
+
+		2.6 Object Pool Pattern: says that " to reuse the object that are expensive to create".
+		Basically, an Object pool is a container which contains a specified amount of objects. When an object is taken from the pool, it is not available in the pool until it is put back. Objects in the pool have a lifecycle: creation, validation and destroy.
+		
+		A pool helps to manage available resources in a better way. There are many using examples: especially in application servers there are data source pools, thread pools etc.
+		NOTE: Object pool design pattern is essentially used in Web Container of the server for creating thread pools and data source pools to process the requests.
+		Example: 
+
+
+B. Structural design Patterns:
+	1. design patterns are about organizing different classes and objects to form larger structures and provide new functionality.
+
+	There are following 7 types of structural design patterns.
+
+Adapter Pattern/Wrapper: says that just "converts the interface of a class into another interface that a client wants".
+Adapting an interface into another according to client expectation.
+
+Bridge Pattern:says that just "decouple the functional abstraction from the implementation so that the two can vary independently".
+Separating abstraction (interface) from implementation.
+
+Composite Pattern: says that just "allow clients to operate in generic manner on objects that may or may not represent a hierarchy of objects".
+Allowing clients to operate on hierarchy of objects.
+
+Decorator Pattern:says that just "attach a flexible additional responsibilities to an object dynamically".
+Adding functionality to an object dynamically.
+
+Facade Pattern:says that just "just provide a unified and simplified interface to a set of interfaces in a subsystem, therefore it hides the complexities of the subsystem from the client".
+Providing an interface to a set of interfaces.
+
+Flyweight Pattern: says that just "to reuse already existing similar kind of objects by storing them and create new object when no matching object is found".
+Reusing an object by sharing it.
+
+proxy/Placeholder Pattern:  a Proxy Pattern "provides the control for accessing the original object". So, we can perform many operations like hiding the information of original object, on demand loading etc.
+Representing another object.
+
+
+
+
+C.Behavioral: 
+Behavioral design patterns are concerned with the interaction and responsibility of objects.
+In these design patterns,the interaction between the objects should be in such a way that they can easily talk to each other and still should be loosely coupled.	
+
+
+Types:
+Chain of Responsibility Pattern: says that just "avoid coupling the sender of a request to its receiver by giving multiple objects a chance to handle the request". For example, an ATM uses the Chain of Responsibility design pattern in money giving process.
+
+Command Pattern: says that "encapsulate a request under an object as a command and pass it to invoker object. Invoker object looks for the appropriate object which can handle this command and pass the command to the corresponding object and that object executes the command". It is also known as Action or Transaction.
+
+Interpreter Pattern:
+
+
+Iterator Pattern: Iterator Pattern is used "to access the elements of an aggregate object sequentially without exposing its underlying implementation".The Iterator pattern is also known as Cursor.
+In collection framework, we are now using Iterator that is preferred over Enumeration.
+java.util.Iterator interface uses Iterator Design Pattern.
+
+
+Mediator Pattern
+
+Memento Pattern
+
+Observer Pattern:says that "just define a one-to-one dependency so that when one object changes state, all its dependents are notified and updated automatically". 
+
+State Pattern
+
+Strategy Pattern:A Strategy Pattern says that "defines a family of functionality, encapsulate each one, and make them interchangeable".
+The Strategy Pattern is also known as Policy.
+
+Template Pattern:A Template Pattern says that "just define the skeleton of a function in an operation, deferring some steps to its subclasses".
+Benefits:
+It is very common technique for reusing the code.This is only the main benefit of it.
+Game Example: 
+
+Visitor Pattern
+
+Null Object
+
+
+*************************************************************************************************************************
+
+JEE or J2EE Design Patterns:
+
+J2EE design patterns are built for the developing the Enterprise Web-based Applications.
+In J2EE , there are mainly three types of design patterns, which are further divided into their sub-parts:
+1. Presentation Layer Design Pattern
+Intercepting Filter Pattern
+Front Controller Pattern
+View Helper Pattern
+Composite View Pattern
+2. Business Layer Design Pattern
+Business Delegate Pattern
+Service Locator Pattern
+Session Facade Pattern
+Transfer Object Pattern
+3. Integration Layer Design Pattern
+Data Access Object Pattern
+Web Service Broker Pattern
+
+
+
+*************************************************************************************************************************
+
+
+observer design pattern
+strategy design pattern in java
+
+*************************************************************************************************************************
+What is an immutable class in Java?
+
+Immutable objects are instances whose state doesn’t change after it has been initialized. For example, String is an immutable class and once instantiated its value never changes.
+
+
+
+how to create immutable class in java?
+
+1. Declare the class as final so it can’t be extended.
+2. Make all fields private so that direct access is not allowed.
+3. Don’t provide setter methods for variables.
+4. Make all mutable fields final so that its value can be assigned only once.
+5. Initialize all the fields via a constructor performing deep copy.
+6. Perform deep cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+Benefits of Immutable Class in Java:
+1. good for caching purposes because you don’t have to worry about the value changes.
+2. it is inherently thread-safe, so you don’t have to worry about thread safety in case of multi-threaded environment.
+*************************************************************************************************************************
+Why String is Immutable in Java?
+ The string is one of the most used classes in any programming language. We know that String is immutable and final in Java. Java runtime maintains a String pool that makes it a special class.
+
+1. String pool is possible only because String is immutable in Java. This way Java Runtime saves a lot of heap space because different String variables can refer to the same String variable in the pool. If String would not have been immutable, then String interning would not have been possible because if any variable would have changed the value, it would have been reflected in the other variables too.
+
+2. If String is not immutable then it would cause a severe security threat to the application. For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String. Since String is immutable, its value can’t be changed otherwise any hacker could change the referenced value to cause security issues in the application.
+
+3. Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads. This avoids the use of synchronization for thread safety. Strings are implicitly thread-safe.
+
+4. Strings are used in java classloader and immutability provides security that correct class is getting loaded by Classloader. For example, think of an instance where you are trying to load java.sql.Connection class but the referenced value is changed to myhacked.Connection class that can do unwanted things to your database.
+
+5. Since String is immutable, its hashcode is cached at the time of creation and it doesn’t need to be calculated again. This makes it a great candidate for the key in a Map and its processing is faster than other HashMap key objects. This is why String is the most widely used as HashMap keys.
+
+Above are some of the reasons I could think of that shows benefits of String immutability. It’s a great feature of the Java String class and makes it special.
+
+*************************************************************************************************************************
+
+shallow and deep cloning in java
+
+
+Shallow Copy
+
+Whenever we use default implementation of clone method we get shallow copy of object means it creates new instance and copies all the field of object to that new instance and returns it as object type, we need to explicitly cast it back to our original object. This is shallow copy of the object.
+clone() method of the object class support shallow copy of the object. If the object contains primitive as well as nonprimitive or reference type variable in shallow copy, the cloned object also refers to the same object to which the original object refers as only the object references gets copied and not the referred objects themselves.
+That’s why the name shallow copy or shallow cloning in Java. If only primitive type fields or Immutable objects are there then there is no difference between shallow and deep copy in Java.
+
+//code illustrating shallow copy
+public class Ex {
+  
+    private int[] data;
+  
+    // makes a shallow copy of values
+    public Ex(int[] values) {
+        data = values;
+    }
+  
+    public void showData() {
+        System.out.println( Arrays.toString(data) );
+    }
+}
+public class UsesEx{
+  
+    public static void main(String[] args) {
+        int[] vals = {3, 7, 9};
+        Ex e = new Ex(vals);
+        e.showData(); // prints out [3, 7, 9]
+        vals[0] = 13;
+        e.showData(); // prints out [13, 7, 9]
+  
+        // Very confusing, because we didn't
+        // intentionally change anything about 
+        // the object e refers to.
+    }
+}
+
+Deep Copy: creates fully independent copy of original obj.  
+
+Whenever we need own copy not to use default implementation we call it as deep copy, whenever we need deep copy of the object we need to implement according to our need.
+So for deep copy we need to ensure all the member class also implement the Cloneable interface and override the clone() method of the object class.
+A deep copy means actually creating a new array and copying over the values.
+
+// Code explaining deep copy
+public class Ex {
+      
+    private int[] data;
+  
+    // altered to make a deep copy of values
+    public Ex(int[] values) {
+        data = new int[values.length];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = values[i];
+        }
+    }
+  
+    public void showData() {
+        System.out.println(Arrays.toString(data));
+    }
+}
+public class UsesEx{
+  
+    public static void main(String[] args) {
+        int[] vals = {3, 7, 9};
+        Ex e = new Ex(vals);
+        e.showData(); // prints out [3, 7, 9]
+        vals[0] = 13;
+        e.showData(); // prints out [3, 7, 9]
+  
+       // changes in array values will not be 
+       // shown in data values. 
+    }
+}
+Changes to the array vals will not result in changes to the array data.
+
+when to use what
+There is no hard and fast rule defined for selecting between shallow copy and deep copy but normally we should keep in mind that if an object has only primitive fields, then obviously we should go for shallow copy, but if the object has references to other objects, then based on the requirement, shallow copy or deep copy should be done. If the references are not updated then there is no point to initiate a deep copy.
+
+Lazy Copy
+A lazy copy can be defined as a combination of both shallow copy and deep copy. The mechanism follows a simple approach – at the initial state, shallow copy approach is used. A counter is also used to keep a track on how many objects share the data. When the program wants to modify the original object, it checks whether the object is shared or not. If the object is shared, then the deep copy mechanism is initiated.
+*************************************************************************************************************************
+
+
+hierarchy/lifecycle of thread class in java
+A thread in Java at any point of time exists in any one of the following states. 
+A thread lies only in one of the shown states at any instant:
+
+1. New
+2. Runnable
+3. Blocked/Waiting
+5. Timed Waiting
+6. Terminated
+
+
+Life Cycle of a thread
+
+1. New: In this state, a Thread class object is created using a new operator, but the thread is not alive. Thread doesn't start until we call the start() method.
+2. Runnable: In this state, the thread is ready to run after calling the start() method. However, the thread is not yet selected by the thread scheduler.
+3. Running: In this state, the thread scheduler picks the thread from the ready state, and the thread is running.
+4.Waiting/Blocked: In this state, a thread is not running but still alive, or it is waiting for the other thread to finish.
+5.Dead/Terminated: A thread is in terminated or dead state when the run() method exits.
+
+*************************************************************************************************************************
+
+multithreading interview questions: 
+
+Object class method: 
+equals
+finalize
+getClass
+hashCode
+notify
+notifyAll
+toString
+wait
+
+Thread class method: yeild, wait,sleep,join methods
+
+difference between wait and sleep in java:
+The major difference is that wait() releases the lock or monitor while sleep() doesn't releases the lock or monitor while waiting. wait() is used for inter-thread communication while sleep() is used to introduce pause on execution, generally.
+
+join(): java.lang.Thread.join() Waits for this thread to die.  Thread class provides the join() method which allows one thread to wait until another thread completes its execution. If t is a Thread object whose thread is currently executing, then t. join() will make sure that t is terminated before the next instruction is executed by the program.
+Syntax:
+public final void join() throws InterruptedException
+Throws:
+InterruptedException - if any thread has interrupted the 
+current thread. The interrupted status of the current thread is 
+cleared when this exception is thrown
+
+
+ yield(): java.lang.Thread.yield() A hint to the scheduler that the current thread is willing to yield its current use of a processor A yield() method is a static method of Thread class and it can stop the currently executing thread and will give a chance to other waiting threads of the same priority. If in case there are no waiting threads or if all the waiting threads have low priority then the same thread will continue its execution.
+
+sleep(long millis): java.lang.Thread.sleep(long millis) Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of milliseconds, subject to the precision and accuracy of system timers and schedulers
+Syntax:
+public static void sleep(long millis) throws InterruptedException
+Parameters:
+millis - the length of time to sleep in milliseconds
+Throws:
+IllegalArgumentException - if the value of millis is negative
+InterruptedException - if any thread has interrupted the 
+current thread. The interrupted status of the current thread 
+is cleared when this exception is thrown.
+
+start(): java.lang.Thread.start() Causes this thread to begin execution; the Java Virtual Machine calls the run method of this thread
+Syntax:
+public void start()
+Throws:
+IllegalThreadStateException - if the thread was already started.
+
+
+run(): java.lang.Thread.run() If this thread was constructed using a separate Runnable run object, then that Runnable object’s run method is called; otherwise, this method does nothing and returns
+Syntax:
+public void run()
+Description:
+If this thread was constructed using a separate Runnable run object,
+then that Runnable object's run method is called; 
+otherwise, this method does nothing and returns.
+Subclasses of Thread should override this method.
+
+
+Is it possible to start a thread twice?
+No, we cannot restart the thread, as once a thread started and executed, it goes to the Dead state. Therefore, if we try to start a thread twice, it will give a runtimeException "java.lang.IllegalThreadStateException". Consider the following example.
+
+Can we call the run() method instead of start()?
+Yes, calling run() method directly is valid, but it will not work as a thread instead it will work as a normal object. There will not be context-switching between the threads. When we call the start() method, it internally calls the run() method, which creates a new stack for a thread while directly calling the run() will not create a new stack.
+
+The daemon threads are the low priority threads that provide the background support and services to the user threads. Daemon thread gets automatically terminated by the JVM if the program remains with the daemon thread only, and all other user threads are ended/died. There are two methods for daemon thread available in the Thread class:
+public void setDaemon(boolean status): It used to mark the thread daemon thread or a user thread.
+public boolean isDaemon(): It checks the thread is daemon or not.
+
+What is the deadlock?
+Deadlock is a situation in which every thread is waiting for a resource which is held by some other waiting thread. In this situation, Neither of the thread executes nor it gets the chance to be executed. Instead, there exists a universal waiting state among all the threads. Deadlock is a very complicated situation which can break our code at runtime.
+
+
+*************************************************************************************************************************
+
+
+concurrenthashmap internal working
+
+The ConcurrentHashMap class is introduced in JDK 1.5 belongs to java.util.concurrent package, which implements ConcurrentMap as well as to Serializable interface also. ConcurrentHashMap is an enhancement of HashMap as we know that while dealing with Threads in our application HashMap is not a good choice because performance-wise HashMap is not up to the mark.
+
+ default initial capacity (16), load factor (0.75) and concurrencyLevel (16).
+
+Key points of ConcurrentHashMap:  
+
+The underlined data structure for ConcurrentHashMap is Hashtable.
+ConcurrentHashMap class is thread-safe i.e. multiple threads can operate on a single object without any complications.
+At a time any number of threads are applicable for a read operation without locking the ConcurrentHashMap object which is not there in HashMap.
+In ConcurrentHashMap, the Object is divided into a number of segments according to the concurrency level.
+The default concurrency-level of ConcurrentHashMap is 16.
+In ConcurrentHashMap, at a time any number of threads can perform retrieval operation but for updated in the object, the thread must lock the particular segment in which the thread wants to operate. This type of locking mechanism is known as Segment locking or bucket locking. Hence at a time, 16 update operations can be performed by threads.
+Inserting null objects is not possible in ConcurrentHashMap as a key or value.
+
+*************************************************************************************************************************
+hashtable and  hashmap difference
+ HashMap is non synchronized. It is not-thread safe and can't be shared between many threads without proper synchronization code whereas Hashtable is synchronized. ... 
+ HashMap allows one null key and multiple null values whereas Hashtable doesn't allow any null key or value
+
+*************************************************************************************************************************
+hashtable and current hashmap difference
+
+Hashtable is belongs to the Collection framework; ConcurrentHashMap belongs to the Executor framework. Hashtable uses single lock for whole data. ConcurrentHashMap uses multiple locks on segment level (16 by default) instead of object level i.e. whole Map . ConcurrentHashMap locking is applied only for updates.
+
+
+*************************************************************************************************************************
+
+garbage collection in java
+
+Java applications obtain objects in memory as needed. It is the task of garbage collection (GC) in the Java virtual machine (JVM) to automatically determine what memory is no longer being used by a Java application and to recycle this memory for other uses.
+
+*************************************************************************************************************************
+
+object creation with memory allocation in java
+
+1. if we create an object with new operator then it will get create on heap area of memory.
+2. String type variables arre stored in string pool
+
+*************************************************************************************************************************
+
+default scope of spring bean: Singlton
+different scope of bean in spring: Singlton, Protype, Session, Request
+*************************************************************************************************************************
+
+
+Dependancy Injection: ways to Use it: Autowired
+Types: Constructor:, Setter:property,name,value
+*************************************************************************************************************************
+
+Spring support Polymorphis:
+***@qulifer annotation
+*************************************************************************************************************************
+
+Spring Security:
+*************************************************************************************************************************
+
+Adv of microservice:
+1. Scalablity ex flipcart big billion day
+2. 
+
+
+*************************************************************************************************************************
+MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.
+
+Model - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.
+
+View - View represents the visualization of the data that model contains.
+
+Controller - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
+*************************************************************************************************************************
+
+New:
+docker,kubarnet,kafka,YAML file, 
+*************************************************************************************************************************
+1)What is a oops concept explain with example?
+
+1. Abstraction
+2. Inheritance - IS-A Relationship
+3. Polymorphism
+4. Encapsulation
+5. Class
+6. Object
+7. Association - HAS-A Relationship
+	Aggregation: Contained object can exist without container object
+	Composition: Contained object can't exist without container object
+*************************************************************************************************************************
+2)Reverse string without function?
+
+String rev="";  
+for(int i=str.length();i>0;--i)  
+{  
+rev=rev+(str.charAt(i-1));   
+}  
+return rev;  
+*************************************************************************************************************************
+3)What are Collection?: A Collection represents a single unit of objects, i.e., a group.
+
+
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+*************************************************************************************************************************
+4)What is binary search?
+Binary Search: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+
+Example :
+
+The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
+*************************************************************************************************************************
+5)lambda function
+Syntax
+A lambda expression is characterized by the following syntax.
+
+parameter -> expression body
+
+Example:
+//with type declaration
+MathOperation addition = (int a, int b) -> a + b;
+
+//with out type declaration
+MathOperation subtraction = (a, b) -> a - b;
+
+//with return statement along with curly braces
+MathOperation multiplication = (int a, int b) -> { return a * b; };
+
+//without return statement and without curly braces
+MathOperation division = (int a, int b) -> a / b;
+		
+Lambda expressions are used primarily to define inline implementation of a functional interface, i.e., an interface with a single method only. In the above example, we've used various types of lambda expressions to define the operation method of MathOperation interface. Then we have defined the implementation of sayMessage of GreetingService.
+
+Lambda expression eliminates the need of anonymous class and gives a very simple yet powerful functional programming capability to Java.		
+*************************************************************************************************************************
+6)Palindrome code
+ int r,sum=0,temp;    
+  int n=454;//It is the number variable to be checked for palindrome  
+  
+  temp=n;    
+  while(n>0){    
+   r=n%10;  //getting remainder  
+   sum=(sum*10)+r;    
+   n=n/10;    
+  }    
+  if(temp==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+*************************************************************************************************************************
+7)Diff between Abstract and Interface
+
+main difference between an abstract class and interface in Java 8 is the fact that an abstract class is a class and an interface is an interface. A class can have a state which can be modified by non-abstract methods but an interface cannot have the state because they can't have instance variables.
+
+The second difference is that an interface cannot have a constructor even in Java 8 but you may remember that abstract class can also have a constructor in Java. All methods of an interface were abstract but since Java 8 you can define non-abstract methods in the form of default and static methods inside interface in Java.
+
+*************************************************************************************************************************
+11)Diff between comparator and comparable
+
+Comparable	Comparator
+1) Comparable provides a single sorting sequence. In other words, we can sort the collection on the basis of a single element such as id, name, and price.	
+The Comparator provides multiple sorting sequences. In other words, we can sort the collection on the basis of multiple elements such as id, name, and price etc.
+2) Comparable affects the original class, i.e., the actual class is modified.	
+Comparator doesn't affect the original class, i.e., the actual class is not modified.
+3) Comparable provides compareTo() method to sort elements.	
+Comparator provides compare() method to sort elements.
+4) Comparable is present in java.lang package.	
+A Comparator is present in the java.util package.
+5) We can sort the list elements of Comparable type by Collections.sort(List) method.	
+We can sort the list elements of Comparator type by Collections.sort(List, Comparator) method.
+*************************************************************************************************************************
+13)Diff between singleton class and Immutable class
+Immutable means the value once assigned cannot be changed, so usually you won't have setter methods in immutable, but no such requirement is there for singleton. But a singleton is more from memory perspective, only one instance will live.
+*************************************************************************************************************************
+17)Diff between hashcode and equals()?
+Whenever hashCode() method is invoked on the same object more than once during an execution of a Java program, this method must consistently return the same result. ... If two objects are equal as per the equals() method, then calling the hashCode() method in each of the two objects must return the same integer result.
+*************************************************************************************************************************
+15)What is semaphores
+ Semaphore is simply a variable which is non-negative and shared between threads. This variable is used to solve the critical section problem and to achieve process synchronization in the multiprocessing environment. 
+Semaphores are of two types:
+ 
+
+Binary Semaphore – 
+This is also known as mutex lock. It can have only two values – 0 and 1. Its value is initialized to 1. It is used to implement the solution of critical section problem with multiple processes.
+Counting Semaphore – 
+Its value can range over an unrestricted domain. It is used to control access to a resource that has multiple instances.
+*************************************************************************************************************************
+
+18)JDBC class structure
+Create a singleton connection class DatabaseConnection in com.jdbc.util package. Use your MySQL username and password on the variable user and pass. Look carefully at the last part of the “url” variable. It is mandatory to keep the name the same as the database name. The name of my database is “org” that’s why I put “org” in the URL variable.
+
+package com.jdbc.util;
+  
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+  
+public class DatabaseConnection {
+  
+    private static Connection con = null;
+  
+    static
+    {
+        String url = "jdbc:mysql:// localhost:3306/org";
+        String user = "root";
+        String pass = "root";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, pass);
+        }
+        catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static Connection getConnection()
+    {
+        return con;
+    }
+}
+*************************************************************************************************************************
+
+19)Function used in HTTPS
+ GET , POST , PUT , DELETE , and OPTIONS .
+*************************************************************************************************************************
+
+20)Parameters in doGet(...)?
+Three parts of doGet()
+HttpServletRequest req.: The HttpServletRequest object can be used to retrieve incoming HTTP request headers and form data.
+HttpServletResponse res.
+throws ServletException, IOException.
+*************************************************************************************************************************
+
+21)Different SDLC model
+1. Waterfall: 
+In this method, the whole process of software development is divided into various phases.
+The waterfall model is a continuous software development model in which development is seen as flowing steadily downwards (like a waterfall) through the steps of requirements analysis, design, implementation, testing (validation), integration, and maintenance.
+
+Agile:"Agile process model" refers to a software development approach based on iterative development. Agile methods break tasks into smaller iterations, or parts do not directly involve long term planning. The project scope and requirements are laid down at the beginning of the development process. Plans regarding the number of iterations, the duration and the scope of each iteration are clearly defined in advance.
+Following are the phases in the Agile model are as follows:
+Requirements gathering
+Design the requirements
+Construction/ iteration
+Testing/ Quality assurance
+Deployment
+Feedback
+
+
+RAD: RAD or Rapid Application Development process is an adoption of the waterfall model; it targets developing software in a short period. The RAD model is based on the concept that a better system can be developed in lesser time by using focus groups to gather system requirements.
+
+Incremental
+
+Iterative
+
+Sprial
+
+V model:In this type of SDLC model testing and the development, the step is planned in parallel. So, there are verification phases on the side and the validation phase on the other side. V-Model joins by Coding phase.
+
+*************************************************************************************************************************
+
+22)Diff between waterfall and agile
+
+Agile is an incremental and iterative approach; Waterfall is a linear and sequential approach. Agile separates a project into sprints; Waterfall divides a project into phases. Agile helps complete many small projects; Waterfall helps complete one single project.
+*************************************************************************************************************************
+
+23)Disadvantage of agile
+Teams get easily sidetracked due to lack of processes. The inherent freedom and independence of the Agile methodology can be refreshing. ...
+Long-term projects suffer from incremental delivery. ...
+The level of collaboration can be difficult to maintain.
+
+*************************************************************************************************************************
+
+24)isARelationShip - Inheritance and hasArelationship - Assocation diff?
+*************************************************************************************************************************
+
+***25)What is the latest java version and what are the new feature added in latest java version
+Java 1.8
+Java 8 provides following features for Java Programming:
+
+Lambda expressions,
+Method references,
+Functional interfaces,
+Stream API,
+Default methods,
+Base64 Encode Decode,
+Static methods in interface,
+Optional class,
+Collectors class,
+ForEach() method,
+Parallel array sorting,
+Nashorn JavaScript Engine,
+Parallel Array Sorting,
+Type and Repating Annotations,
+IO Enhancements,
+Concurrency Enhancements,
+JDBC Enhancements etc.
+*************************************************************************************************************************
+
+26)types of inheritance and can we implement multiple inheritance in java if yes then how?
+
+1. Single
+2. multilevel
+3. Hierarchical
+
+multiple and hybrid inheritance is supported through interface only.
+No. we can achive it using interface
+
+*************************************************************************************************************************
+
+27)What are access modifiers?Diff between protected and Default
+
+There are two types of modifiers in Java: access modifiers and non-access modifiers.
+
+The access modifiers in Java specifies the accessibility or scope of a field, method, constructor, or class. We can change the access level of fields, constructors, methods, and class by applying the access modifier on it.
+
+There are four types of Java access modifiers:
+
+*************************************************************************************************************************
+
+
+28)By default what is the access modifiers of variables in java.
+There are two types of modifiers in Java: access modifiers and non-access modifiers.
+
+The access modifiers in Java specifies the accessibility or scope of a field, method, constructor, or class. We can change the access level of fields, constructors, methods, and class by applying the access modifier on it.
+
+There are four types of Java access modifiers:
+
+1. Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+2. Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+3. Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+4. Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+There are many non-access modifiers, such as static, abstract, synchronized, native, volatile, transient, etc. Here, we are going to learn the access modifiers only.
+
+Understanding Java Access Modifiers
+
+AccessModifier	within class	within package	outside package by subclass only	outside package
+Private			Y				N				N										N
+Default			Y				Y				N										N
+Protected		Y				Y				Y										N
+Public			Y				Y				Y										Y
+
+*************************************************************************************************************************
+
+29)Diff between compilers and interpretors
+
+Computer programs are usually written on high level languages. A high level language is one that can be understood by humans. ... Interpreter translates just one statement of the program at a time into machine code. Compiler scans the entire program and translates the whole of it into machine code at once.
+
+S.No.	Compiler	Interpreter
+1.	Compiler scans the whole program in one go.	Translates program one statement at a time.
+2.	As it scans the code in one go, the errors (if any) are shown at the end together.	Considering it scans code one line at a time, errors are shown line by line.
+3.	Main advantage of compilers is it’s execution time.	Due to interpreters being slow in executing the object code, it is preferred less.
+4.	It converts the source code into object code.	It does not convert source code into object code instead it scans it line by line
+5	It does not require source code for later execution.	It requires source code for later execution.
+Eg.	C, C++, C# etc.	Python, Ruby, Perl, SNOBOL, MATLAB, etc.
+*************************************************************************************************************************
+
+30)Diff between JVM,JRE,JDK
+
+JDK is a software development kit whereas JRE is a software bundle that allows Java program to run, whereas JVM is an environment for executing bytecode. JDK is platform dependent, JRE is also platform dependent, but JVM is platform independent. ... JDK contains tools for developing, debugging, etc.
+
+JDK = JRE+Dev Tool
+JRE = JVM+Library Classes
+*************************************************************************************************************************
+
+31)Diff between sets and list
+
+The main difference between List and Set is that Set is unordered and contains different elements, whereas the list is ordered and can contain the same elements in it.
+
+If the requirement is to have only unique values then Set is your best bet as any implementation of Set maintains unique values only. If there is a need to maintain the insertion order irrespective of the duplicity then List is a best option.
+
+HashSet vs TreeSet:
+
+1- Hashset gives better performance (faster) than Treeset for the operations like add, remove, contains, size etc. HashSet offers constant time cost while TreeSet offers log(n) time cost for such operations
+
+Does TreeSet allow null?
+TreeSet does not allows to store any null in java. Any attempt to add null throws runtimeException (NullPointerException). For storing elements HashSet internally uses HashMap. For storing elements LinkedHashSet internally uses LinkedHashMap.
+
+
+If you want to synchronize HashSet in Java or looking for a thread-safe alternative of HashSet then there are following options.
+Use Collections.synchronizedSet() to synchronize Set– This method returns a synchronized (thread-safe) set backed by the specified set.
+Using CopyOnWriteArraySet– Another option is to use CopyOnWriteArraySet from the java.util.concurrent package which is the thread safe implementation of the Set. CopyOnWriteArraySet uses an internal CopyOnWriteArrayList for all of its operations. For all mutative operations (add, set, remove, etc.) a new copy is created that is why using it is expensive.
+*************************************************************************************************************************
+
+32)Why does map work faster than array?
+HashMap uses an array underneath so it can never be faster than using an array correctly
+*************************************************************************************************************************
+
+33)What is static ? Where do we use?
+
+In Java, static is a keyword that can be used with variables, classes, blocks, and methods. When we use the static keyword before any of them, it means that specified member belongs to a type itself. In other words, an instance of a static member is created and shared across all the instances of the class.
+*************************************************************************************************************************
+
+34)What is ACID property 
+
+A transaction is a single logical unit of work which accesses and possibly modifies the contents of a database. Transactions access data using read and write operations.
+In order to maintain consistency in a database, before and after the transaction, certain properties are followed. These are called ACID properties.
+
+1)Atomicity: The term atomicity defines that the data remains atomic. It means if any operation is performed on the data, either it should be performed or executed completely or should not be executed at all. 
+2) Consistency: The word consistency means that the value should remain preserved always. In DBMS, the integrity of the data should be maintained, which means if a change in the database is made, it should remain preserved always.
+3) Isolation: The term 'isolation' means separation. In DBMS, Isolation is the property of a database where no data should affect the other one and may occur concurrently. In short, the operation on one database should begin when the operation on the first database gets complete. 
+4) Durability: Durability ensures the permanency of something. In DBMS, the term durability ensures that the data after the successful execution of the operation becomes permanent in the database. 
+
+*************************************************************************************************************************
+
+35)Diff between stacks and queue ?
+A stack is an ordered list of elements where all insertions and deletions are made at the same end, whereas a queue is exactly the opposite of a stack which is open at both the ends meaning one end is used to insert data while the other to remove data. ... stack is known as lifo and queue is kniwn as fifo rule .
+*************************************************************************************************************************
+
+36)What are trees,map,graph
+*************************************************************************************************************************
+
+
+37)What is exceptional handeling-Exception is an event that disrupts the normal flow of the program
+
+*************************************************************************************************************************
+
+38)Different exception handeling keywords in java
+
+try,catch,throw throws,finally
+
+throw and throws in Java
+
+throw
+The throw keyword in Java is used to explicitly throw an exception from a method or any block of code. We can throw either checked or unchecked exception. The throw keyword is mainly used to throw custom exceptions. 
+Syntax: 
+throw Instance
+Example:
+throw new ArithmeticException("/ by zero");
+But this exception i.e, Instance must be of type Throwable or a subclass of Throwable.
+
+throws
+
+throws is a keyword in Java which is used in the signature of method to indicate that this method might throw one of the listed type exceptions. The caller to these methods has to handle the exception using a try-catch block. 
+
+Syntax:  
+
+type method_name(parameters) throws exception_list
+exception_list is a comma separated list of all the 
+exceptions which a method might throw.
+In a program, if there is a chance of raising an exception then compiler always warn us about it and compulsorily we should handle that checked exception, Otherwise we will get compile time error saying unreported exception XXX must be caught or declared to be thrown. To prevent this compile time error we can handle the exception in two ways: 
+
+By using try catch
+By using throws keyword
+We can use throws keyword to delegate the responsibility of exception handling to the caller (It may be a method or JVM) then caller method is responsible to handle that exception.  
+*************************************************************************************************************************
+
+39)Java Exception hierarchy
+
+What is an Exception?
+
+An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program’s instructions.
+
+Error vs Exception
+
+Error: An Error indicates serious problem that a reasonable application should not try to catch.
+Exception: Exception indicates conditions that a reasonable application might try to catch.
+
+All exception and errors types are sub classes of class Throwable, which is base class of hierarchy.One branch is headed by Exception. This class is used for exceptional conditions that user programs should catch. NullPointerException is an example of such an exception.Another branch,Error are used by the Java run-time system(JVM) to indicate errors having to do with the run-time environment itself(JRE). StackOverflowError is an example of such an error.
+*************************************************************************************************************************
+
+40)What are methods in exception class
+
+1	public String getMessage()
+
+Returns a detailed message about the exception that has occurred. This message is initialized in the Throwable constructor.
+
+2	public Throwable getCause()
+
+Returns the cause of the exception as represented by a Throwable object.
+
+3	public String toString()
+
+Returns the name of the class concatenated with the result of getMessage().
+
+4	public void printStackTrace()
+
+Prints the result of toString() along with the stack trace to System.err, the error output stream.
+*************************************************************************************************************************
+
+41)What are checked and uncheced exception in java
+In Java, there are two types of exceptions:
+
+1) Checked: are the exceptions that are checked at compile time. If some code within a method throws a checked exception, then the method must either handle the exception or it must specify the exception using throws keyword.
+IOException, SQLException, and ParseException.
+
+2) Unchecked are the exceptions that are not checked at compiled time. In C++, all exceptions are unchecked, so it is not forced by the compiler to either handle or specify the exception. It is up to the programmers to be civilized, and specify or catch the exceptions.
+ArithmeticException , ArrayStoreException , ClassCastException ,
+
+In Java exceptions under Error and RuntimeException classes are unchecked exceptions, everything else under throwable is checked.
+*************************************************************************************************************************
+
+42)Diff between throw and throws
+*************************************************************************************************************************
+
+43)Diff between final finally finalize
+
+Final class can't be inherited, final method can't be overridden and final variable value can't be changed. Finally is used to place important code, it will be executed whether exception is handled or not. Finalize is used to perform clean up processing just before object is garbage collected.
+*************************************************************************************************************************
+
+44)Diff between string, string builder and string buffer
+
+String is immutable and stringBuilder and StringBuffer is mutable
+
+StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously. StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+
+StringBuffer and String builder can be modified over and over again without leaving behind a lot of new unused objects.
+*************************************************************************************************************************
+
+45)Some of the basic function of string builder and string buffer
+1	public StringBuffer append(String s)
+Updates the value of the object that invoked the method. The method takes boolean, char, int, long, Strings, etc.
+
+2	public StringBuffer reverse()
+The method reverses the value of the StringBuffer object that invoked the method.
+
+3	public delete(int start, int end)
+Deletes the string starting from the start index until the end index.
+
+4	public insert(int offset, int i)
+This method inserts a string s at the position mentioned by the offset.
+
+5	replace(int start, int end, String str)
+This method replaces the characters in a substring of this StringBuffer with characters in the specified String.
+*************************************************************************************************************************
+
+46)What kind of exception we need to handle explicitely with example?-Comple time exception and runtime exception
+
+Checked Exception
+*************************************************************************************************************************
+
+47)Features of hashmap?In which scenario we use hashmap
+
+*************************************************************************************************************************
+48)If we want to create our own hashmap class can we do it?
+
+*************************************************************************************************************************
+49)If we are extending a map interface what are the method we need to override-get(),put(),add(),remove()
+
+*************************************************************************************************************************
+50)Can a class be a static class ?
+
+*************************************************************************************************************************
+51)What is nested class ?
+
+*************************************************************************************************************************
+51)What is immutable in java?
+
+*************************************************************************************************************************
+
+52)What is string pool memory
+
+*************************************************************************************************************************
+53)How many types of joint are present in MYSQL?
+
+*************************************************************************************************************************
+54)How to prevent a class from being a sub class in java?-when a final modifier is used that class cannot be made sub 
+class in java
+
+*************************************************************************************************************************
+55)Can we override a static method in java-No we cannot override a static because method override is based upon dynaimc binding at runtime and static method are binded using static binding at compile time. 
+
+*************************************************************************************************************************
+56)What is static binding and dynamic binding explain with example
+
+*************************************************************************************************************************
+57)In which scenario we use final keyword?
+
+To make class final so that it can't be inherited by another class
+
+To make method final so that it can't be overriden
+
+To make variable final so it value can't be changes
+*************************************************************************************************************************
+58)Diff between checked and unchecked exception?
+
+*************************************************************************************************************************
+
+59)When to use abstract class and when to use interface in java
+
+*************************************************************************************************************************
+
+60)Diff between method overloading and method overidding in java
+
+*************************************************************************************************************************
+
+61)What is object cloning and why do we need it.
+
+to create new object from exsting object it is used.
+*************************************************************************************************************************
+
+62)Seriziable interface and transient variables.
+63)When do we use arraylist and when do use linked list.
+64)Exapmle of user defined exception and how can we define that?and what are the method we need to override.  -----extend exception class in user define class and override  toString() to display exeption message.
+65)When we should go for join method in thread.: Thread class provides the join() method which allows one thread to wait until another thread completes its execution. If t is a Thread object whose thread is currently executing, then t. join() will make sure that t is terminated before the next instruction is executed by the program.
+66)What is this and super keyword in java?Differentiate between them?: super keyword is used to access methods of the parent class while this is used to access methods of the current class. this keyword. this is a reserved keyword in java i.e, we can't use it as an identifier. this is used to refer current-class's instance as well as static members.
+67)What is aggregation?: Composition, Aggregation
+68)Types of Sorting algo: 
+69)Time and Space complexity
+70)What is fail safe iterators in java?
+71)If you have arraylist,linked list and arrays which one will you use for seraching and sorting?: ArrayList provides constant time for search operation, so it is better to use ArrayList if searching is more frequent operation than add and remove operation. ... The ArrayList class doesn't implement Deque interface. In sort, ArrayList is better to access data wherease LinkedList is better to manipulate data.
+72)If you have password in your database then what will u use for authentication string or char? and why?: use char becz String is immutable, Security,Log file safety
+73)What is GC in java?
+74)Can we use return in void?: A void function cannot return any values. But we can use the return statement. It indicates that the function is terminated.
+75)What do you mean by Map entry: The Map. Entry interface enables you to work with a map entry. The entrySet( ) method declared by the Map interface returns a Set containing the map entries. Each of these set elements is a Map.
+76)Real life example of singleton class
+78)Fail safe and fail fast in java: Iterators in java are used to iterate over the Collection objects.Fail-Fast iterators immediately throw ConcurrentModificationException if there is structural modification of the collection. Structural modification means adding, removing any element from collection while a thread is iterating over that collection. Iterator on ArrayList, HashMap classes are some examples of fail-fast Iterator.  ------- Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. This is because, they operate on the clone of the collection, not on the original collection and that’s why they are called fail-safe iterators. Iterator on CopyOnWriteArrayList, ConcurrentHashMap classes are examples of fail-safe Iterator.
+80)Is Java a pure object oriented language?: Java language is not a Pure Object Oriented Language as it contain these properties: Primitive Data Type ex. ... In Smalltalk, primitive values such as integers, booleans and characters are also objects. In Java, we have predefined types as non-objects (primitive types).
