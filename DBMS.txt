@@ -1,0 +1,253 @@
+1)Diff between DBMS and RDBMS
+
+No.	DBMS	RDBMS
+1)	DBMS applications store data as file.	RDBMS applications store data in a tabular form.
+2)	In DBMS, data is generally stored in either a hierarchical form or a navigational form.	In RDBMS, the tables have an identifier called primary key and the data values are stored in the form of tables.
+3)	Normalization is not present in DBMS.	Normalization is present in RDBMS.
+4)	DBMS does not apply any security with regards to data manipulation.	RDBMS defines the integrity constraint for the purpose of ACID (Atomocity, Consistency, Isolation and Durability) property.
+5)	DBMS uses file system to store data, so there will be no relation between the tables.	in RDBMS, data values are stored in the form of tables, so a relationship between these data values will be stored in the form of a table as well.
+6)	DBMS has to provide some uniform methods to access the stored information.	RDBMS system supports a tabular structure of the data and a relationship between them to access the stored information.
+7)	DBMS does not support distributed database.	RDBMS supports distributed database.
+8)	DBMS is meant to be for small organization and deal with small data. it supports single user.	RDBMS is designed to handle large amount of data. it supports multiple users.
+9)	Examples of DBMS are file systems, xml etc.	Example of RDBMS are mysql, postgre, sql server, oracle etc.
+
+*******************************************************************************************************************************************************************************
+
+2)Explain diff types of DBMS model?-Relational model,ER model,Semistructured model ,object based model
+
+*******************************************************************************************************************************************************************************
+
+3)Advantage of DBMS
+
+*******************************************************************************************************************************************************************************
+
+4)Different language supported in DBMS-DDL,DML,DCL,TCL
+1. Data Definition Language
+DDL stands for Data Definition Language. It is used to define database structure or pattern.
+It is used to create schema, tables, indexes, constraints, etc. in the database.
+Using the DDL statements, you can create the skeleton of the database.
+Data definition language is used to store the information of metadata like the number of tables and schemas, their names, indexes, columns in each table, constraints, etc.
+Here are some tasks that come under DDL:
+
+Create: It is used to create objects in the database.
+Alter: It is used to alter the structure of the database.
+Drop: It is used to delete objects from the database.
+Truncate: It is used to remove all records from a table.
+Rename: It is used to rename an object.
+Comment: It is used to comment on the data dictionary.
+These commands are used to update the database schema that's why they come under Data definition language.
+
+2. Data Manipulation Language
+DML stands for Data Manipulation Language. It is used for accessing and manipulating data in a database. It handles user requests.
+
+Here are some tasks that come under DML:
+
+Select: It is used to retrieve data from a database.
+Insert: It is used to insert data into a table.
+Update: It is used to update existing data within a table.
+Delete: It is used to delete all records from a table.
+Merge: It performs UPSERT operation, i.e., insert or update operations.
+Call: It is used to call a structured query language or a Java subprogram.
+Explain Plan: It has the parameter of explaining data.
+Lock Table: It controls concurrency.
+3. Data Control Language
+DCL stands for Data Control Language. It is used to retrieve the stored or saved data.
+The DCL execution is transactional. It also has rollback parameters.
+(But in Oracle database, the execution of data control language does not have the feature of rolling back.)
+
+Here are some tasks that come under DCL:
+
+Grant: It is used to give user access privileges to a database.
+Revoke: It is used to take back permissions from the user.
+There are the following operations which have the authorization of Revoke:
+
+CONNECT, INSERT, USAGE, EXECUTE, DELETE, UPDATE and SELECT.
+
+4. Transaction Control Language
+TCL is used to run the changes made by the DML statement. TCL can be grouped into a logical transaction.
+
+Here are some tasks that come under TCL:
+
+Commit: It is used to save the transaction on the database.
+Rollback: It is used to restore the database to original since the last Commit.
+
+*******************************************************************************************************************************************************************************
+
+5)What is query optimization*
+
+ The query optimizer attempts to determine the most efficient way to execute a given query by considering the possible query plans
+The goal of query optimization is to derive an efficient execution plan in terms of relevant performance measures, such as memory usage and query response time.
+*******************************************************************************************************************************************************************************
+6)What do you understand by query optimization*
+
+Query optimization is the overall process of choosing the most efficient means of executing a SQL statement. SQL is a nonprocedural language, so the optimizer is free to merge, reorganize, and process in any order. The database optimizes each SQL statement based on statistics collected about the accessed data.
+*******************************************************************************************************************************************************************************
+
+7)What is ER model
+
+*******************************************************************************************************************************************************************************
+8)Different abstraction layers in DBMS
+
+*******************************************************************************************************************************************************************************
+9)Diff between tables and view
+
+*******************************************************************************************************************************************************************************
+10)What do you understand by entity,entity types and entity set*
+
+*******************************************************************************************************************************************************************************
+11)Different relationship in database?-one to one,one to many,many to many,self referencing relationship
+
+*******************************************************************************************************************************************************************************
+12)What is concurrency control
+
+*******************************************************************************************************************************************************************************
+13)What are ACID property
+
+*******************************************************************************************************************************************************************************
+14)What are normalization and different type of normalization
+
+*******************************************************************************************************************************************************************************
+15)What is transitive dependencies and functional dependencies
+
+*******************************************************************************************************************************************************************************
+16)Different type of keys in DBMS
+
+*******************************************************************************************************************************************************************************
+17)Diff between Primary Key and Unique key
+
+
+Paramenter	PRIMARY KEY	UNIQUE KEY
+Basic	Used to serve as a unique identifier for each row in a table.	Uniquely determines a row which isn’t primary key.
+NULL value acceptance	Cannot accept NULL values.	Can accept one NULL value.
+Number of keys that can be defined in the table	Only one primary key	More than one unique key
+Index	Creates clustered index	Creates non-clustered index
+*******************************************************************************************************************************************************************************
+18)What is diff between trigger and stored procedure
+
+Stored procedures can be invoked explicitly by the user. It's like a java program , it can take some input as a parameter then can do some processing and can return values. On the other hand, trigger is a stored procedure that runs automatically when various events happen (eg update, insert, delete)
+*******************************************************************************************************************************************************************************
+
+19)What is retroactive,proactive and simultameous update*
+
+*******************************************************************************************************************************************************************************
+
+20)Different types of Join
+A SQL Join statement is used to combine data or rows from two or more tables based on a common field between them. Different types of Joins are:
+
+INNER JOIN: The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies. This keyword will create the result-set by combining all rows from both the tables where the condition satisfies i.e value of the common field will be same.
+Syntax:
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1 
+INNER JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+LEFT JOIN: This join returns all the rows of the table on the left side of the join and matching rows for the table on the right side of join. The rows for which there is no matching row on right side, the result-set will contain null. LEFT JOIN is also known as LEFT OUTER JOIN.Syntax:
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1 
+LEFT JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+
+RIGHT JOIN:  RIGHT JOIN is similar to LEFT JOIN. This join returns all the rows of the table on the right side of the join and matching rows for the table on the left side of join. The rows for which there is no matching row on left side, the result-set will contain null. RIGHT JOIN is also known as RIGHT OUTER JOIN.Syntax:
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1 
+RIGHT JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+
+FULL JOIN:  FULL JOIN creates the result-set by combining result of both LEFT JOIN and RIGHT JOIN. The result-set will contain all the rows from both the tables. The rows for which there is no matching, the result-set will contain NULL values.Syntax:
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1 
+FULL JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+*******************************************************************************************************************************************************************************
+
+21)What are index
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index is a pointer to data in a table. An index in a database is very similar to an index in the back of a book.
+*******************************************************************************************************************************************************************************
+
+22)Explain specialization and generalization
+
+*******************************************************************************************************************************************************************************
+
+23)What do you understand by data dependency
+
+*******************************************************************************************************************************************************************************
+
+24)What are deadlock and how it can be resolved
+
+*******************************************************************************************************************************************************************************
+
+25)Diff between exclusive lock and shared lock
+
+*******************************************************************************************************************************************************************************
+
+26)Diff between DROP,DELETE and TRUNCATE
+
+*******************************************************************************************************************************************************************************
+
+27)Diff between UNION and UNION ALL
+
+*******************************************************************************************************************************************************************************
+
+28)How do you use pattern matching in sql
+
+*******************************************************************************************************************************************************************************
+
+29)How do you manipulate case in sql
+
+*******************************************************************************************************************************************************************************
+
+30)What do understand by view ,syntax?
+
+*******************************************************************************************************************************************************************************
+
+31)Write query for creating a duplicate table without and data 
+
+CREATE TABLE new_table SELECT * FROM original_table;
+
+*******************************************************************************************************************************************************************************
+
+32)Query for displaying only even rows data or odd rows data.
+
+*******************************************************************************************************************************************************************************
+
+33)Remove duplicate rows from table
+
+1. DELETE t1 FROM contacts t1  
+INNERJOIN contacts t2   
+WHERE  
+    t1.id < t2.id AND  
+    t1.email = t2.email;  
+
+2. 
+
+*******************************************************************************************************************************************************************************
+
+34)Query to add email validation to database
+
+
+SELECT email 
+FROM YourTable 
+WHERE email NOT LIKE '%_@__%.__%'
+
+*******************************************************************************************************************************************************************************
+
+35)Query to find nth heighest sal
+
+
+select * from ((select * from Employee 
+       ORDER BY `sal` DESC limit 6 ) AS T) 
+       ORDER BY T.`sal` ASC limit 1;
+
+
+SELECT * FROM Employee WHERE sal = 
+         (
+            SELECT MIN(sal) FROM Employee 
+            WHERE  sal IN (
+                                 SELECT DISTINCT TOP N
+                                     sal FROM Employee 
+                                         ORDER BY sal DESC
+                             )
+        )
