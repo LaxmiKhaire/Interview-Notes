@@ -13,6 +13,7 @@ Infosys Interview Quesions:
 11. spring boot life cycle 
 12. @ autiwired with setter method and with variable declaration
 13. Differnece between put and post method
+14. why string is not used for storing password
 
 *************************************************************************************************************************
 C2L biz Interview quesions:
