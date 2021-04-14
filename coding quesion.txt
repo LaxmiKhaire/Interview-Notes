@@ -1,3 +1,124 @@
+********************************************************************************************************************************************************************
+WAP to find out 2nd highest number from given array
+
+List<Integer> list=Arrays.asList(a);  
+Collections.sort(list);  
+int element=list.get(size-2);  
+return element; 
+
+---------------------------------------------
+Arrays.sort(a);  
+return a[size-2];
+
+--------------------------------------------
+
+int temp;  
+for (int i = 0; i < total; i++)   
+{  
+    for (int j = i + 1; j < total; j++)   
+    {  
+        if (a[i] > a[j])   
+        {  
+            temp = a[i];  
+            a[i] = a[j];  
+            a[j] = temp;  
+        }  
+    }  
+}  
+ return a[total-2];
+
+********************************************************************************************************************************************************************
+Remove the duplicate elements in the arraylist without using another collection framework.
+
+ ArrayList<Object> al = new ArrayList<Object>();
+al.add("java");
+al.add('a');
+al.add('b');
+al.add('a');
+al.add("java");
+System.out.println("Before Remove Duplicate elements:"+al); 
+for(int i=0;i<al.size();i++){
+ 
+ for(int j=i+1;j<al.size();j++){
+            if(al.get(i).equals(al.get(j))){
+                al.remove(j);
+                j--;
+            }
+    }
+ 
+ }
+ System.out.println("After Removing duplicate elements:"+al);
+ 
+ ----------------------------------------------------------
+ 
+HashSet<String> hashset = new HashSet<String>();
+ /* Adding ArrayList elements to the HashSet
+ * in order to remove the duplicate elements and 
+ * to preserve the insertion order.
+ */
+hashset.addAll(arraylist);
+
+// Removing ArrayList elements
+arraylist.clear();
+
+// Adding LinkedHashSet elements to the ArrayList
+arraylist.addAll(hashset );
+-------------------------------------------------------
+
+
+    
+********************************************************************************************************************************************************************
+Detect loop in linked list
+
+ // Returns true if there is a loop in linked
+// list else returns false.
+static boolean detectLoop(Node h)
+{
+    HashSet<Node> s = new HashSet<Node>();
+    while (h != null) {
+        // If we have already has this node
+        // in hashmap it means their is a cycle
+        // (Because you we encountering the
+        // node second time).
+        if (s.contains(h))
+            return true;
+
+        // If we are seeing the node for
+        // the first time, insert it in hash
+        s.add(h);
+
+        h = h.next;
+    }
+
+    return false;
+}
+********************************************************************************************************************************************************************
+WAP to sort 3 * 3 matrix
+
+// function to sort the given matrix
+static void sortMat(int mat[][], int n)
+{
+    // temporary matrix of size n^2
+    int temp[] = new int[n * n];
+    int k = 0;
+
+    // copy the elements of matrix 
+    // one by one into temp[]
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            temp[k++] = mat[i][j];
+
+    // sort temp[]
+    Arrays.sort(temp);
+
+    // copy the elements of temp[]
+    // one by one in mat[][]
+    k = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            mat[i][j] = temp[k++];
+}
+********************************************************************************************************************************************************************
 import java.util.*;
 
 class Emp{
