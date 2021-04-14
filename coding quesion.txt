@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Emp{
+    String name;
+    Emp(String n){
+        name=n;
+    }
+}
+public class MyClass {
+    
+    public static void main(String args[]) {
+            
+        HashMap<Emp,Integer> map=new HashMap<>();
+        
+        map.put(new Emp("akshay"),1);
+        map.put(new Emp("lax"),2);
+        map.put(new Emp("priyanka"),3);
+        
+        System.out.println("size="+map.size());
+        System.out.println("size="+map.get(new Emp("akshay")));
+   
+    }
+}
+
+Output:::::::::::
+3
+null
+
