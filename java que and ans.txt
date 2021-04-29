@@ -1,4 +1,17 @@
 *************************************************************************************************************************
+SmartNet
+
+1. Abstraction,Polymorphism
+2. how to handle Exceptions in java
+3. difference between inner join and outer join
+4. can we call child class method using parent referance
+5. Custom exception in java - hoe to create it and will it be a checked exception or unchecked exception
+6. Sort the list of Employee by salary - how to do it
+7. How many way we can insert data into table in mysql
+8. Servelt life cycle
+
+
+*************************************************************************************************************************
 Infosys Interview Quesions:
 
 1. Polymorphism
