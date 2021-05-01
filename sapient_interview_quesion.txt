@@ -1,0 +1,172 @@
+// package whatever; // don't place package name!
+
+import java.io.*;
+import java.util.*;
+
+class MyCode {
+	public static void main (String[] args) {
+		System.out.println(balanced("{)"));
+    
+	}
+
+
+
+// balanced brackets - ({}[]){[()]}
+
+// {)
+public static boolean balanced(String input) {
+  //code here
+  char a[]=input.toChar();
+  
+  Stack<Character> st1;
+  if(a.length%2!=0){
+    return false;
+  }else{
+    for(int i=0; i<a.length; i++){
+           
+        if("(".equals(a[i]) || "{".equals(a[i]) || "[".equals(a[i])){
+          st1.push(a[i]);
+        }else if(")".equals(a[i]) || "}".equals(a[i]) || "]".equals(a[i])){
+          if(st1.size()>0){
+            st1.pop();
+          }
+        }   
+      if(st1.size()==0)
+        return true;
+      else
+        return false;
+    }
+    
+  }
+  
+}
+}
+
+
+// solid principle
+
+
+//	Association, Composition and Aggregation
+
+
+
+// OOPS - Abs, Enc, Inh, Poly
+
+
+
+public class Test {
+  public static void main(String... s) {
+    System.out.println(1);
+  }
+}
+
+//immutable
+
+String s1 = "abc";
+String s2 = "abc";
+StringBuffer sb = new StringBuffer(s1);
+
+System.out.println(s1 == s2); // false
+System.out.println(s1.equals(s2)); // true
+System.out.println(s1.equals(sb)); // true
+System.out.println(s1.contentEquals(sb)); // true
+
+// exception hierarchy
+
+public class Person {
+  int age;
+  String name;
+  
+  public int hashCode() {
+    return 1;
+  }
+  
+  public boolean equals(Object obj) {
+    return this.name.equals(((Person) obj).name);
+  }
+}
+
+Person p1 = new Person(10, "Sourabh");
+Person p2 = new Person(12, "Sourabh");
+HashMap<Person, String> map = new HashMap<>();
+
+map.put(p1, "Sourabh");
+map.put(p2, "laxmi");
+
+map.get(p1);
+
+@FunctionalIn
+interface AddNum{
+  void add(int n1,int n2);
+  
+}
+
+
+AddNum a=(n1,n2) -> { 
+  System.out.println("Sum ="+(n1+n2))
+}
+a.add(10,30);
+
+List<Person> p= map.stream().filter(age-> age>18).collect(Collector.asList);
+
+List<Person> personList;
+
+// filter all the person age > 18;
+
+
+// comparator vs comparable 
+
+
+
+
+    public static synchronized void m1() {
+        try {
+            Thread.sleep(2000);
+            System.out.println("In method m1");
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+    }
+
+    public synchronized void m2() {
+        System.out.println("In method m2");
+    }
+
+    public static void thread() {
+        Thread t1 = new Thread(Test::m1);
+        Thread t2 = new Thread(new Test()::m2);
+
+        t1.start();
+        t2.start();
+    }
+
+
+
+Employee (id, name, deptId); Department (id, name)
+
+
+1. get - employeeName, DepartmentName
+
+
+select e.name as employeeName, d.name as DepartmentName 
+from Employee e, Department d
+where e.deptId=d.id;
+
+
+2. DepartmentName, noOfEmployee
+
+select d.name, count(*) as count from Department d
+left join Employee e ON e.deptId=d.id
+group by d.name;
+
+
+
+
+
+
+
+
+
+
+
+
