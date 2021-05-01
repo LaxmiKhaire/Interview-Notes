@@ -1,11 +1,30 @@
-Difference between Servlet and JSP
+*************Difference between Servlet and JSP
 Servlet	JSP
 Servlet is a java code.	JSP is a html based code.
-Writing code for servlet is harder than JSP as it is html in java.	JSP is easy to code as it is java in html.
-Servlet plays a controller role in MVC approach.	JSP is the view in MVC approach for showing output.
+Writing code for servlet is harder than JSP as it is html in java.
+JSP is easy to code as it is java in html.
+Servlet plays a controller role in MVC approach.	
+JSP is the view in MVC approach for showing output.
 Servlet is faster than JSP.	JSP is slower than Servlet because the first step in JSP lifecycle is the translation of JSP to java code and then compile.
 Servlet can accept all protocol requests.	JSP only accept http requests.
 In Servlet, we can override the service() method.	In JSP, we cannot override its service() method.
 In Servlet by default session management is not enabled, user have to enable it explicitly.	In JSP session management is automatically enabled.
-In Servlet we have to implement everything like business logic and presentation logic in just one servlet file.	In JSP business logic is separated from presentation logic by using javaBeans.
-Modification in Servlet is a time consuming task because it includes reloading, recompiling and restarting the server.	JSP modification is fast, just need to click the refresh button.
+In Servlet we have to implement everything like business logic and presentation logic in just one servlet file.
+In JSP business logic is separated from presentation logic by using javaBeans.
+Modification in Servlet is a time consuming task because it includes reloading, recompiling and restarting the server.	
+JSP modification is fast, just need to click the refresh button.
+
+************
+difference in SendRedirect() and RequestDispatcher() in Servlet
+
+SendRedirect
+This is the method of object HttpServlerResponse.
+Request is redirected to client (Browser), and it will process the new URL.
+End User can see on which page, url is redirected.
+In Nutshell, Processing done at client side.
+
+RequestDispatcher
+This object can be accessed from HttpServletRequest.
+Servlet will internally forward the request to another servlet or jsp page.
+End user don’t know that which page is processed internally.
+In Nutshell, Processing done at server side.
