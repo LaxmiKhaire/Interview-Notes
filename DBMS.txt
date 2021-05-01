@@ -1,3 +1,30 @@
+***Difference between Primary Key and Unique Key 
+Primary Key	Unique Key
+Unique identifier for rows of a table	Unique identifier for rows of a table when primary key is not present
+Cannot be NULL	Can be NULL
+Only one primary key can be present in a table	Multiple Unique Keys can be present in a table
+
+ A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It uniquely identifies a record in the relational database table.
+ 
+ MySQL is a relational database. MongoDB is NoSQL Database.
+********************************************************************************
+Sr. No.	Key	MySQL	MongoDB
+1	Owned/Developed By	MySQL is owned by Oracle.	MongoDB is developed by MongoDB Inc.
+2	Data Storage	MySql stores data in tabular format as records in table.	MongoDB stores records as documents.
+3	Language	SQL, Structured Query Language is used to query database.	Dynamic Schema. Predefined structure is defined for incoming data.
+4	Design Objectives	No efficient replication and Sharding available.	High availability, Scalability, Replication and Sharding are inbuilt.
+5	Terms	MongoDB uses Collection, Document, Field, Embedded Document, Linking etc.	MySQL uses Table, Row, Column, Joins etc.
+6	Data Storage	MySQL stores data in forms of records in table.	MongoDB stores data in form of JSON like documents.
+********************************************************************************
+Comparison Basis	WHERE Clause	HAVING Clause
+Definition	It is used to perform filtration on individual rows.	It is used to perform filtration on groups.
+Basic	It is implemented in row operations.	It is implemented in column operations.
+Data fetching	The WHERE clause fetches the specific data from particular rows based on the specified condition	The HAVING clause first fetches the complete data. It then separates them according to the given condition.
+Aggregate Functions	The WHERE clause does not allow to work with aggregate functions.	The HAVING clause can work with aggregate functions.
+Act as	The WHERE clause acts as a pre-filter.	The HAVING clause acts as a post-filter.
+Used with	We can use the WHERE clause with the SELECT, UPDATE, and DELETE statements.	The HAVING clause can only use with the SELECT statement.
+GROUP BY	The GROUP BY clause comes after the WHERE clause.	The GROUP BY clause comes before the HAVING clause.
+********************************************************************************
 1)Diff between DBMS and RDBMS
 
 No.	DBMS	RDBMS
