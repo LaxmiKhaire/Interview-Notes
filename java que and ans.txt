@@ -968,7 +968,9 @@ Java 8 provides following features for Java Programming:
 
 Lambda expressions,
 Method references,
-Functional interfaces,
+
+Functional interfaces, -It's not mandatory to mark the functional interface with @FunctionalInterface annotation, the compiler doesn't throw any error. But it's good practice to use @FunctionalInterface annotation to avoid the addition of extra methods accidentally.
+
 Stream API,
 Default methods,
 Base64 Encode Decode,
