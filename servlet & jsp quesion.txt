@@ -28,3 +28,42 @@ This object can be accessed from HttpServletRequest.
 Servlet will internally forward the request to another servlet or jsp page.
 End user don’t know that which page is processed internally.
 In Nutshell, Processing done at server side.
+
+
+
+SendRedirect in servlet
+sendRedirect method
+Syntax of sendRedirect() method
+Example of RequestDispatcher interface
+The sendRedirect() method of HttpServletResponse interface can be used to redirect response to another resource, it may be servlet, jsp or html file.
+
+Difference between forward() and sendRedirect() method
+There are many differences between the forward() method of RequestDispatcher and sendRedirect() method of HttpServletResponse interface. They are given below:
+forward() method	sendRedirect() method
+The forward() method works at server side.	The sendRedirect() method works at client side.
+It sends the same request and response objects to another servlet.	It always sends a new request.
+It can work within the server only.	It can be used within and outside the server.
+Example: request.getRequestDispacher("servlet2").forward(request,response);	Example: response.sendRedirect("servlet2");
+Syntax of sendRedirect() method
+public void sendRedirect(String URL)throws IOException;  
+Example of sendRedirect() method
+response.sendRedirect("http://www.javatpoint.com");  
+
+**************************
+Email validation in js
+
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+alert("Valid email address!");
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+
+*********************
