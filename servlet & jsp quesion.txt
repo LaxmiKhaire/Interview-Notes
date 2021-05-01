@@ -1,0 +1,11 @@
+Difference between Servlet and JSP
+Servlet	JSP
+Servlet is a java code.	JSP is a html based code.
+Writing code for servlet is harder than JSP as it is html in java.	JSP is easy to code as it is java in html.
+Servlet plays a controller role in MVC approach.	JSP is the view in MVC approach for showing output.
+Servlet is faster than JSP.	JSP is slower than Servlet because the first step in JSP lifecycle is the translation of JSP to java code and then compile.
+Servlet can accept all protocol requests.	JSP only accept http requests.
+In Servlet, we can override the service() method.	In JSP, we cannot override its service() method.
+In Servlet by default session management is not enabled, user have to enable it explicitly.	In JSP session management is automatically enabled.
+In Servlet we have to implement everything like business logic and presentation logic in just one servlet file.	In JSP business logic is separated from presentation logic by using javaBeans.
+Modification in Servlet is a time consuming task because it includes reloading, recompiling and restarting the server.	JSP modification is fast, just need to click the refresh button.
