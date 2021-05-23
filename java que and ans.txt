@@ -3,11 +3,14 @@ SmartNet
 
 1. Abstraction,Polymorphism
 2. how to handle Exceptions in java
-3. difference between inner join and outer join
-4. can we call child class method using parent referance
-5. Custom exception in java - hoe to create it and will it be a checked exception or unchecked exception
+3. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
+4. can we call child class method using parent referance NO
+	why? 
+	Imagine that your child class is inheriting the parent class. Then the child class can define it's own methods, that are not defined in the parent class and not inherited by  the child class. Java compiler checks compile time polymorphism. There, if you are calling a method of a child object that is defined in the child class itself,  by using a parent reference. Compiler checks whether reference type has the method defined in the reference type class? So there is no such method. see.. compiler gives an error.
+	
+5. Custom exception in java - how to create it and will it be a checked exception or unchecked exception
 6. Sort the list of Employee by salary - how to do it
-7. How many way we can insert data into table in mysql
+7. How many way we can insert data into table in mysql - 2 ways
 8. Servelt life cycle
 
 
@@ -15,18 +18,19 @@ SmartNet
 Infosys Interview Quesions:
 
 1. Polymorphism
-2. explain method overriding with covariant data type
+2. explain method overriding with covariant data type -Covariant return type refers to return type of an overriding method. It allows to narrow down return type of an overridden method without any need to cast the type or check the return type. Covariant return type works only for non-primitive return types
+
 4. Exception handling
-5. ClassNotFoundException & ClassDefException
+5. ClassNotFoundException & ClassDefException - ClassNotFoundException is an exception that occurs when you try to load a class at run time using Class. forName() or loadClass() methods and mentioned classes are not found in the classpath. NoClassDefFoundError is an error that occurs when a particular class is present at compile time, but was missing at run time.0
 6. Error and Expection with example
-7. Outer joins?
-8. truncate and delete difference
+7. Outer joins? -two types
+8. truncate and delete difference- Delete and truncate both commands can be used to delete data of the table. Delete is a DML command whereas truncate is DDL command. Truncate can be used to delete the entire data of the table without maintaining the integrity of the table. On the other hand , delete statement can be used for deleting the specific data.
 9. how spring boot runs
-10. which context is return by spring boot and what is use of it?
+10. which context is return by spring boot and what is use of it? - ApplicationContext
 11. spring boot life cycle 
 12. @ autiwired with setter method and with variable declaration
 13. Differnece between put and post method
-14. why string is not used for storing password
+14. why string is not used for storing password - becz of caching
 
 *************************************************************************************************************************
 C2L biz Interview quesions:
@@ -65,7 +69,8 @@ Life Cycle of Spring:
 
 InitializingBean or DisposableBean callbacks
 
-When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
+When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. Similarly, when the bean is no longer required and 
+is removed from the container, some cleanup may be required.
 
 *************************************************************************************************************************
 
@@ -177,7 +182,8 @@ a=a.substring(b.length)
 
 3. flatmap and map difference
 
-map and flatMap can be applied to a Stream<T> and they both return a Stream<R>. The difference is that the map operation produces one output value for each input value, whereas the flatMap operation produces an arbitrary number (zero or more) values for each input value.
+map and flatMap can be applied to a Stream<T> and they both return a Stream<R>. The difference is that the map operation produces one output value for each input value, 
+whereas the flatMap operation produces an arbitrary number (zero or more) values for each input value.
 
 This is reflected in the arguments to each operation.
 
@@ -339,8 +345,8 @@ A. creational design patterns
 		
 		2.3 Singleton Pattern- says that just"define a class that has only one instance and provides a global point of access to it". Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.
 		To create the singleton class, we need to have static member of class, private constructor and static factory method.
-
-			Static member: It gets memory only once because of static, itcontains the instance of the Singleton class.
+6
+			Static member: It gets memory only once because of static, it contains the instance of the Singleton class.
 			Private constructor: It will prevent to instantiate the Singleton class from outside the class.
 			Static factory method: This provides the global point of access to the Singleton object and returns the instance to the caller.
 		
@@ -624,7 +630,7 @@ notifyAll
 toString
 wait
 
-Thread class method: yeild, wait,sleep,join methods
+Thread class method: yeild, sleep,join methods
 
 difference between wait and sleep in java:
 The major difference is that wait() releases the lock or monitor while sleep() doesn't releases the lock or monitor while waiting. wait() is used for inter-thread communication while sleep() is used to introduce pause on execution, generally.
@@ -1282,18 +1288,30 @@ to create new object from exsting object it is used.
 
 62)Seriziable interface and transient variables.
 63)When do we use arraylist and when do use linked list.
+
 64)Exapmle of user defined exception and how can we define that?and what are the method we need to override.  -----extend exception class in user define class and override  toString() to display exeption message.
+
 65)When we should go for join method in thread.: Thread class provides the join() method which allows one thread to wait until another thread completes its execution. If t is a Thread object whose thread is currently executing, then t. join() will make sure that t is terminated before the next instruction is executed by the program.
+
 66)What is this and super keyword in java?Differentiate between them?: super keyword is used to access methods of the parent class while this is used to access methods of the current class. this keyword. this is a reserved keyword in java i.e, we can't use it as an identifier. this is used to refer current-class's instance as well as static members.
+
 67)What is aggregation?: Composition, Aggregation
+
 68)Types of Sorting algo: 
 69)Time and Space complexity
 70)What is fail safe iterators in java?
+
 71)If you have arraylist,linked list and arrays which one will you use for seraching and sorting?: ArrayList provides constant time for search operation, so it is better to use ArrayList if searching is more frequent operation than add and remove operation. ... The ArrayList class doesn't implement Deque interface. In sort, ArrayList is better to access data wherease LinkedList is better to manipulate data.
+
 72)If you have password in your database then what will u use for authentication string or char? and why?: use char becz String is immutable, Security,Log file safety
+
 73)What is GC in java?
 74)Can we use return in void?: A void function cannot return any values. But we can use the return statement. It indicates that the function is terminated.
+
 75)What do you mean by Map entry: The Map. Entry interface enables you to work with a map entry. The entrySet( ) method declared by the Map interface returns a Set containing the map entries. Each of these set elements is a Map.
+
 76)Real life example of singleton class
+
 78)Fail safe and fail fast in java: Iterators in java are used to iterate over the Collection objects.Fail-Fast iterators immediately throw ConcurrentModificationException if there is structural modification of the collection. Structural modification means adding, removing any element from collection while a thread is iterating over that collection. Iterator on ArrayList, HashMap classes are some examples of fail-fast Iterator.  ------- Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. This is because, they operate on the clone of the collection, not on the original collection and that’s why they are called fail-safe iterators. Iterator on CopyOnWriteArrayList, ConcurrentHashMap classes are examples of fail-safe Iterator.
+
 80)Is Java a pure object oriented language?: Java language is not a Pure Object Oriented Language as it contain these properties: Primitive Data Type ex. ... In Smalltalk, primitive values such as integers, booleans and characters are also objects. In Java, we have predefined types as non-objects (primitive types).
