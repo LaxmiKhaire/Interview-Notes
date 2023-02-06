@@ -1,0 +1,23 @@
+1. Java Features
+2. JDK-> JRE ->JVM
+3. Exception Hierarchy
+4. Collection Hierarchy
+5. how to handle Exceptions in java -> try,catch,finally,throw,throws
+6. Custom exception in java - how to create it and will it be a checked exception or unchecked exception
+    All exceptions must be a child of Throwable. If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, 
+    you need to extend the Exception class. 
+    If you want to write a runtime exception, you need to extend the RuntimeException class.
+6. can we call child class method using parent referance NO
+	why? 
+	Imagine that your child class is inheriting the parent class. Then the child class can define it's own methods, 
+  that are not defined in the parent class and not inherited by  the child class. Java compiler checks compile time polymorphism. 
+  There, if you are calling a method of a child object that is defined in the child class itself,  by using a parent reference. 
+  Compiler checks whether reference type has the method defined in the reference type class? So there is no such method. see.. compiler gives an error.
+7. 
+	
+
+
+
+SQL DB ->
+
+1. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
