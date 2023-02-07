@@ -1,4 +1,15 @@
 1. Java Features
+	Encapsulation
+	Inheritance
+	ABstarction
+	Polymorphism ->
+		static polymorphism -> method overloading
+		Dynamic polymorphism
+			1. explain method overriding with covariant data type -Covariant return type refers to return type of an overriding method.
+			It allows to narrow down return type of an overridden method without any need to cast the type or check the return type.
+			Covariant return type works only for non-primitive return types
+
+	
 2. JDK-> JRE ->JVM
 3. Exception Hierarchy
 4. Collection Hierarchy
@@ -7,13 +18,20 @@
     All exceptions must be a child of Throwable. If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, 
     you need to extend the Exception class. 
     If you want to write a runtime exception, you need to extend the RuntimeException class.
-6. can we call child class method using parent referance NO
+7. can we call child class method using parent referance NO
 	why? 
 	Imagine that your child class is inheriting the parent class. Then the child class can define it's own methods, 
   that are not defined in the parent class and not inherited by  the child class. Java compiler checks compile time polymorphism. 
   There, if you are calling a method of a child object that is defined in the child class itself,  by using a parent reference. 
   Compiler checks whether reference type has the method defined in the reference type class? So there is no such method. see.. compiler gives an error.
-7. 
+8. Sort the list of Employee by salary - how to do it
+9.Servelt life cycle ->
+	Servlet class is loaded.
+	Servlet instance is created.
+	init method is invoked.
+	service method is invoked.
+	destroy method is invoked.
+10.
 	
 
 
@@ -21,3 +39,4 @@
 SQL DB ->
 
 1. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
+2. How many way we can insert data into table in mysql - 2 ways
