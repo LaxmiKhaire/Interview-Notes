@@ -12,6 +12,10 @@
 	
 2. JDK-> JRE ->JVM
 3. Exception Hierarchy
+	1. ClassNotFoundException & ClassDefException - ClassNotFoundException is an exception that occurs when you try to load a class at run time using Class. 
+	forName() or loadClass() methods and mentioned classes are not found in the classpath. 
+	NoClassDefFoundError is an error that occurs when a particular class is present at compile time, but was missing at run time.
+
 4. Collection Hierarchy
 5. how to handle Exceptions in java -> try,catch,finally,throw,throws
 6. Custom exception in java - how to create it and will it be a checked exception or unchecked exception
@@ -40,3 +44,13 @@ SQL DB ->
 
 1. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
 2. How many way we can insert data into table in mysql - 2 ways
+3. truncate and delete difference- Delete and truncate both commands can be used to delete data of the table. Delete is a DML command whereas truncate is DDL command. Truncate can be used to delete the entire data of the table without maintaining the integrity of the table. On the other hand , delete statement can be used for deleting the specific data.
+
+
+
+Spring Boot -
+1. how spring boot runs
+2. which context is return by spring boot and what is use of it? - ApplicationContext
+3. spring boot life cycle 
+4. @ autiwired with setter method and with variable declaration
+5. Differnece between put and post method
