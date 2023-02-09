@@ -1,3 +1,10 @@
+IMP links - 
+https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
+https://www.geeksforgeeks.org/multithreading-in-java/
+https://www.geeksforgeeks.org/polymorphism-in-java/
+https://www.geeksforgeeks.org/java-equals-compareto-equalsignorecase-and-compare/
+
+JAVA Core ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 1. Java Features
 	Encapsulation
 	Inheritance
@@ -35,22 +42,381 @@
 	init method is invoked.
 	service method is invoked.
 	destroy method is invoked.
-10.
-	
+10. why string is not used for storing password - becz of caching
+11. Object class methods - 11 methods
+Methods of Object class
+The Object class provides many methods. They are as follows:
+Method	Description
+public final Class getClass()	returns the Class class object of this object. The Class class can further be used to get the metadata of this class.
+public int hashCode()	returns the hashcode number for this object.
+public boolean equals(Object obj)	compares the given object to this object.
+protected Object clone() throws CloneNotSupportedException	creates and returns the exact copy (clone) of this object.
+public String toString()	returns the string representation of this object.
+public final void notify()	wakes up single thread, waiting on this object's monitor.
+public final void notifyAll()	wakes up all the threads, waiting on this object's monitor.
+public final void wait(long timeout)throws InterruptedException	causes the current thread to wait for the specified milliseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait(long timeout,int nanos)throws InterruptedException	causes the current thread to wait for the specified milliseconds and nanoseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait()throws InterruptedException	causes the current thread to wait, until another thread notifies (invokes notify() or notifyAll() method).
+protected void finalize()throws Throwable	is invoked by the garbage collector before object is being garbage collected.
+
+12. solid principles java -
+
+	1. SOLID principles are object-oriented design concepts relevant to software development. SOLID is an acronym for five other class-design principles: Single Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle. 
+	2. This principle suggests that “classes should be open for extension but closed for modification”. What is means is that if the class A is written by the developer AA, and if the developer BB wants some modification on that then developer BB should be easily do that by extending class A, but not by modifying class A.
+
+	3. Single Responsibility Principle (SRP):  states that every Java class must perform a single functionality.
+
+	4. Open-Closed Principle (OCP):  states that according to new requirements the module should be open for extension but closed for modification. 
+
+	5. Liskov Substitution Principle (LSP): It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes.  In other words, if class A is a subtype of class B, then we should be able to replace B with A without interrupting the behavior of the program.
+
+	6. Interface Segregation Principle (ISP): states that the larger interfaces split into smaller ones. Because the implementation classes use only the methods that are required. We should not force the client to use the methods that they do not want to use.
+
+	7. Dependency Inversion Principle (DIP): states that we must use abstraction (abstract classes and interfaces) instead of concrete implementations. High-level modules should not depend on the low-level module but both should depend on the abstraction. Because the abstraction does not depend on detail but the detail depends on abstraction. It decouples the software.
+
+Why should we use SOLID principles?
+	It reduces the dependencies so that a block of code can be changed without affecting the other code blocks.
+The principles intended to make design easier, understandable.
+By using the principles, the system is maintainable, testable, scalable, and reusable.
+It avoids the bad design of the software.
+
+13. What is an immutable class in Java?
+
+Immutable objects are instances whose state doesn’t change after it has been initialized. 
+For example, String is an immutable class and once instantiated its value never changes.
+
+14. how to create immutable class in java?
+
+1. Declare the class as final so it can’t be extended.
+2. Make all fields private so that direct access is not allowed.
+3. Don’t provide setter methods for variables.
+4. Make all mutable fields final so that its value can be assigned only once.
+5. Initialize all the fields via a constructor performing deep copy.
+6. Perform deep cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+Benefits of Immutable Class in Java:
+1. good for caching purposes because you don’t have to worry about the value changes.
+2. it is inherently thread-safe, so you don’t have to worry about thread safety in case of multi-threaded environment.
+
+15. Why String is Immutable in Java?
+ The string is one of the most used classes in any programming language. We know that String is immutable and final in Java. J
+ ava runtime maintains a String pool that makes it a special class.
+1. String pool is possible only because String is immutable in Java. This way Java Runtime saves a lot of heap space because different String variables can refer to the same String variable in the pool. If String would not have been immutable, then String interning would not have been possible because if any variable would have changed the value, it would have been reflected in the other variables too.
+
+2. If String is not immutable then it would cause a severe security threat to the application. For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String. Since String is immutable, its value can’t be changed otherwise any hacker could change the referenced value to cause security issues in the application.
+
+3. Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads. This avoids the use of synchronization for thread safety. Strings are implicitly thread-safe.
+
+4. Strings are used in java classloader and immutability provides security that correct class is getting loaded by Classloader. For example, think of an instance where you are trying to load java.sql.Connection class but the referenced value is changed to myhacked.Connection class that can do unwanted things to your database.
+
+5. Since String is immutable, its hashcode is cached at the time of creation and it doesn’t need to be calculated again. This makes it a great candidate for the key in a Map and its processing is faster than other HashMap key objects. This is why String is the most widely used as HashMap keys.
+
+Above are some of the reasons I could think of that shows benefits of String immutability. It’s a great feature of the Java String class and makes it special.
+
+16. shallow and deep cloning in java
+*Shallow Copy
+
+Whenever we use default implementation of clone method we get shallow copy of object means it creates new instance and copies all the field of object 
+to that new instance and returns it as object type, we need to explicitly cast it back to our original object. This is shallow copy of the object.
+clone() method of the object class support shallow copy of the object. If the object contains primitive as well as nonprimitive or reference type variable 
+in shallow copy, the cloned object also refers to the same object to which the original object refers as only the object references gets copied and 
+not the referred objects themselves. That’s why the name shallow copy or shallow cloning in Java.
+If only primitive type fields or Immutable objects are there then there is no difference between shallow and deep copy in Java.
+
+//code illustrating shallow copy
+public class Ex {
+  
+    private int[] data;
+  
+    // makes a shallow copy of values
+    public Ex(int[] values) {
+        data = values;
+    }
+  
+    public void showData() {
+        System.out.println( Arrays.toString(data) );
+    }
+}
+public class UsesEx{
+  
+    public static void main(String[] args) {
+        int[] vals = {3, 7, 9};
+        Ex e = new Ex(vals);
+        e.showData(); // prints out [3, 7, 9]
+        vals[0] = 13;
+        e.showData(); // prints out [13, 7, 9]
+         // Very confusing, because we didn't
+        // intentionally change anything about 
+        // the object e refers to.
+    }
+}
+
+Deep Copy: creates fully independent copy of original obj.  
+
+Whenever we need own copy not to use default implementation we call it as deep copy, whenever we need deep copy of the object we need to implement 
+according to our need. So for deep copy we need to ensure all the member class also implement the Cloneable interface and override the clone() method of the object
+class. A deep copy means actually creating a new array and copying over the values.
+
+// Code explaining deep copy
+public class Ex {
+      
+    private int[] data;
+  
+    // altered to make a deep copy of values
+    public Ex(int[] values) {
+        data = new int[values.length];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = values[i];
+        }
+    }
+  
+    public void showData() {
+        System.out.println(Arrays.toString(data));
+    }
+}
+public class UsesEx{
+  
+    public static void main(String[] args) {
+        int[] vals = {3, 7, 9};
+        Ex e = new Ex(vals);
+        e.showData(); // prints out [3, 7, 9]
+        vals[0] = 13;
+        e.showData(); // prints out [3, 7, 9]
+  
+       // changes in array values will not be 
+       // shown in data values. 
+    }
+}
+Changes to the array vals will not result in changes to the array data.
+
+when to use what
+There is no hard and fast rule defined for selecting between shallow copy and deep copy but normally we should keep in mind that 
+if an object has only primitive fields, then obviously we should go for shallow copy, 
+but if the object has references to other objects, then based on the requirement, shallow copy or deep copy should be done. 
+If the references are not updated then there is no point to initiate a deep copy.
+
+Lazy Copy
+A lazy copy can be defined as a combination of both shallow copy and deep copy. The mechanism follows a simple approach – at the initial state,
+shallow copy approach is used. A counter is also used to keep a track on how many objects share the data.
+When the program wants to modify the original object, it checks whether the object is shared or not. 
+If the object is shared, then the deep copy mechanism is initiated.
+
+17.Life Cycle of a thread
+
+1. New: In this state, a Thread class object is created using a new operator, but the thread is not alive. Thread doesn't start until we call the start() method.
+2. Runnable: In this state, the thread is ready to run after calling the start() method. However, the thread is not yet selected by the thread scheduler.
+3. Running: In this state, the thread scheduler picks the thread from the ready state, and the thread is running.
+4.Waiting/Blocked: In this state, a thread is not running but still alive, or it is waiting for the other thread to finish.
+5.Dead/Terminated: A thread is in terminated or dead state when the run() method exits.
+
+18.Thread class method: yeild, sleep,join methods
+
+19. difference between wait and sleep in java:
+The major difference is that wait() releases the lock or monitor while sleep() doesn't releases the lock or monitor while waiting.
+wait() is used for inter-thread communication while sleep() is used to introduce pause on execution, generally.
+
+20. join(): java.lang.Thread.join() Waits for this thread to die.  Thread class provides the join() method which allows one thread to wait until another thread 
+completes its execution. If t is a Thread object whose thread is currently executing, then t. join() will make sure that t is terminated before the next 
+instruction is executed by the program.
+Syntax:
+public final void join() throws InterruptedException
+Throws:
+InterruptedException - if any thread has interrupted the 
+current thread. The interrupted status of the current thread is 
+cleared when this exception is thrown
+
+
+ yield(): java.lang.Thread.yield() A hint to the scheduler that the current thread is willing to yield its current use of a processor 
+ A yield() method is a static method of Thread class and it can stop the currently executing thread and will give a chance to other waiting threads of the 
+ same priority. If in case there are no waiting threads or if all the waiting threads have low priority then the same thread will continue its execution.
+
+sleep(long millis): java.lang.Thread.sleep(long millis) Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of 
+milliseconds, subject to the precision and accuracy of system timers and schedulers
+Syntax:
+public static void sleep(long millis) throws InterruptedException
+Parameters:
+millis - the length of time to sleep in milliseconds
+Throws:
+IllegalArgumentException - if the value of millis is negative
+InterruptedException - if any thread has interrupted the 
+current thread. The interrupted status of the current thread 
+is cleared when this exception is thrown.
+
+start(): java.lang.Thread.start() Causes this thread to begin execution; the Java Virtual Machine calls the run method of this thread
+Syntax:
+public void start()
+Throws:
+IllegalThreadStateException - if the thread was already started.
+
+
+run(): java.lang.Thread.run() If this thread was constructed using a separate Runnable run object, then that Runnable object’s run method is called; 
+otherwise, this method does nothing and returns
+Syntax:
+public void run()
+Description:
+If this thread was constructed using a separate Runnable run object,
+then that Runnable object's run method is called; 
+otherwise, this method does nothing and returns.
+Subclasses of Thread should override this method.
+
+
+Is it possible to start a thread twice?
+No, we cannot restart the thread, as once a thread started and executed, it goes to the Dead state. Therefore, if we try to start a thread twice,
+it will give a runtimeException "java.lang.IllegalThreadStateException". Consider the following example.
+
+Can we call the run() method instead of start()?
+Yes, calling run() method directly is valid, but it will not work as a thread instead it will work as a normal object. 
+There will not be context-switching between the threads. When we call the start() method, it internally calls the run() method, 
+which creates a new stack for a thread while directly calling the run() will not create a new stack.
+
+The daemon threads are the low priority threads that provide the background support and services to the user threads.
+Daemon thread gets automatically terminated by the JVM if the program remains with the daemon thread only, and all other user threads are ended/died. 
+There are two methods for daemon thread available in the Thread class:
+public void setDaemon(boolean status): It used to mark the thread daemon thread or a user thread.
+public boolean isDaemon(): It checks the thread is daemon or not.
+
+What is the deadlock?
+Deadlock is a situation in which every thread is waiting for a resource which is held by some other waiting thread. 
+In this situation, Neither of the thread executes nor it gets the chance to be executed. 
+Instead, there exists a universal waiting state among all the threads. Deadlock is a very complicated situation which can break our code at runtime.
 
 
 
-SQL DB ->
+Collection ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+1. Collection Interface
+	The Collection interface is the interface which is implemented by all the classes in the collection framework. 
+	It declares the methods that every collection will have. 
+	In other words, we can say that the Collection interface builds the foundation on which the collection framework depends.
+2. Iterable Interface
+	The Iterable interface is the root interface for all the collection classes. The Collection interface extends the Iterable interface and therefore all
+	the subclasses of Collection interface also implement the Iterable interface.
+3. Iterator interface - Iterator interface provides the facility of iterating the elements in a forward direction only.
+
+2. List Interface - 
+		List interface is the child interface of Collection interface. 
+		It is a list type data structure in which we can store the ordered collection of objects. 
+		It can have duplicate values.
+		List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.
+		
+3. ArrayList
+		The ArrayList class implements the List interface. 
+		It uses a dynamic array to store the duplicate element of different data types.
+		The ArrayList class maintains the insertion order and is non-synchronized. 
+		The elements stored in the ArrayList class can be randomly accessed.
+4. LinkedList
+		LinkedList implements the Collection interface. 
+		It uses a doubly linked list internally to store the elements. 
+		It can store the duplicate elements. 
+		It maintains the insertion order and is not synchronized. 
+		*In LinkedList, the manipulation is fast because no shifting is required.
+5. Vector
+		Vector uses a dynamic array to store the data elements. 
+		It is similar to ArrayList. However, It is synchronized and
+		contains many methods that are not the part of Collection framework.
+6. Stack
+		The stack is the subclass of Vector. 
+		It implements the last-in-first-out data structure, i.e., Stack. 
+		The stack contains all of the methods of Vector class and also provides its methods like boolean push(), boolean peek(), boolean push(object o), 
+		which defines its properties.
+
+7. Queue Interface
+		Queue interface maintains the first-in-first-out order.
+		It can be defined as an ordered list that is used to hold the elements which are about to be processed. 
+		There are various classes like PriorityQueue, Deque, and ArrayDeque which implements the Queue interface.
+8. PriorityQueue
+		The PriorityQueue class implements the Queue interface. 
+		It holds the elements or objects which are to be processed by their priorities.
+		PriorityQueue doesn't allow null values to be stored in the queue.
+9. Deque Interface
+		Deque interface extends the Queue interface. 
+		In Deque, we can remove and add the elements from both the side.
+		Deque stands for a double-ended queue which enables us to perform the operations at both the ends.
+10. ArrayDeque
+		ArrayDeque class implements the Deque interface. 
+		It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.
+		ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.
+11.Set Interface
+		Set Interface in Java is present in java.util package. 
+		It extends the Collection interface. 
+		It represents the unordered set of elements which doesn't allow us to store the duplicate items.
+		We can store at most one null value in Set. Set is implemented by HashSet, LinkedHashSet, and TreeSet.
+
+12. HashSet
+		HashSet class implements Set Interface. 
+		It represents the collection that uses a hash table for storage. 
+		Hashing is used to store the elements in the HashSet. It contains unique items.
+13.LinkedHashSet
+		LinkedHashSet class represents the LinkedList implementation of Set Interface. 
+		It extends the HashSet class and implements Set interface. 
+		Like HashSet, It also contains unique elements. It maintains the insertion order and permits null elements.
+14. 
+
+
+SQL DB ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 1. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
 2. How many way we can insert data into table in mysql - 2 ways
 3. truncate and delete difference- Delete and truncate both commands can be used to delete data of the table. Delete is a DML command whereas truncate is DDL command. Truncate can be used to delete the entire data of the table without maintaining the integrity of the table. On the other hand , delete statement can be used for deleting the specific data.
+4. JDBC connection
 
 
-
-Spring Boot -
+Spring Boot ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 1. how spring boot runs
 2. which context is return by spring boot and what is use of it? - ApplicationContext
 3. spring boot life cycle 
 4. @ autiwired with setter method and with variable declaration
 5. Differnece between put and post method
+6. Hibranate mapping type,
+7. Configurations required to create new project in tomcat- cong file name
+8. DDL and DML
+9. Can we write DDL in functions / procedure
+10. The Java Persistence API (JPA): is a specification of Java. It is used to persist data between Java object and relational database. 
+	JPA acts as a bridge between object-oriented domain models and relational database systems.
+11. Internal view resolver : The InternalResourceViewResolver is an implementation of ViewResolver in the Spring MVC framework which 
+	resolves logical view names like "hello" to internal physical resources like Servlet and JSP files e.g. jsp files placed under the WEB-INF folder
+12. two class dependancy in hibranate: 
+13. jpa and hibarnate: JPA is a standard, while Hibernate is not. In hibernate, we use Session for handling the persistence of data, 
+	while in JPA, we use Entity Manager. The query language in Hibernate is Hibernate Query language, while in JPA, 
+	the query language is Java Persistence query language. Hibernate is one of the most JPA providers.
+14. early and lazy load
+15. @AutoWired: Autowiring feature of spring framework enables you to inject the object dependency implicitly. 
+	It internally uses setter or constructor injection. Autowiring can't be used to inject primitive and string values.
+	Dependency Injection is a design pattern, and @autowired is a mechanism for implementing it.
+16. Life Cycle of Spring:
+InitializingBean or DisposableBean callbacks
+	When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. 
+	Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
+17. DI and IOC
+18. DI types
+Constructor-based dependency injection
+	Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments,
+	each representing a dependency on the other class.
+
+Setter-based dependency injection
+	Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor 
+	or no-argument static factory method to instantiate your bean.
+19. MVC design pattern
+20. Diff Application context and bean factory
+21. Debugging and Exception handlin in spring
+22. how to build war or execute spring..... commond to build using maven
+
+
+
+
+
+
+Programs->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1. Swap two string var without using third string vari
+
+a="l",b="k"
+a=a+b
+b=a.sunstring(0,a.length-b.length)
+a=a.substring(b.length)
+
+2. Singly LinkedList -check palidrome or not.
+3.
+
+
+
+
