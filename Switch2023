@@ -402,10 +402,16 @@ Setter-based dependency injection
 20. Diff Application context and bean factory
 21. Debugging and Exception handlin in spring
 22. how to build war or execute spring..... commond to build using maven
-23. AOP
-24. joint cuts, point cust
-25. mvn tree command to identify not used libraries
-26. Spring runner
+23. AOP - Spring AOP module provides interceptors to intercept an application.
+	For example, when a method is executed, you can add extra functionality before or after the method execution.
+	AOP helps to organise your non-functional things like Auditing, Logging, Transaction Management, Security etc
+24. joint cuts, point cust -Join points are the options on the menu and pointcuts are the items you select.
+	A joinpoint is an opportunity within code for you to apply an aspect...just an opportunity. 
+	Once you take that opportunity and select one or more joinpoints and apply an aspect to them, you've got a pointcut.
+25. mvn tree command to identify not used libraries -mvn dependency:tree
+26. Spring runner - SpringRunner is a custom runner created for JUnit 4 that provides the functionality of the Spring TestContext Framework. 
+		Since Mockito is the default mocking framework integrated with the Spring stack, the runner brings full support provided by MockitoJUnitRunner
+27. 
 
 
 
@@ -413,6 +419,8 @@ JUnit->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 1. Inject mocke
 2. Mock diff
+	@Mock creates a mock, and @InjectMocks creates an instance of the class and injects the mocks that are created with 
+	the @Mock annotations into this instance.
 
 
 
