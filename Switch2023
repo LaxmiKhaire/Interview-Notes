@@ -283,7 +283,8 @@ Instead, there exists a universal waiting state among all the threads. Deadlock 
 
 
 Collection ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+* Internal working of hashmap in java8 
+*
 1. Collection Interface
 	The Collection interface is the interface which is implemented by all the classes in the collection framework. 
 	It declares the methods that every collection will have. 
@@ -353,6 +354,7 @@ Collection ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 14. 
 
 
+
 SQL DB ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 1. difference between inner join and outer join-inner joins result in the intersection of two tables, whereas outer joins result in the union of two tables
@@ -400,6 +402,17 @@ Setter-based dependency injection
 20. Diff Application context and bean factory
 21. Debugging and Exception handlin in spring
 22. how to build war or execute spring..... commond to build using maven
+23. AOP
+24. joint cuts, point cust
+25. mvn tree command to identify not used libraries
+26. Spring runner
+
+
+
+JUnit->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+1. Inject mocke
+2. Mock diff
 
 
 
