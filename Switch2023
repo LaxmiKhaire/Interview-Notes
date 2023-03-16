@@ -369,6 +369,9 @@ Spring Boot ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 3. spring boot life cycle 
 4. @ autiwired with setter method and with variable declaration
 5. Differnece between put and post method
+	POST is always for creating a resource ( does not matter if it was duplicated )
+	PUT is for checking if resource exists then update, else create new resource
+	PATCH is always for updating a resource
 6. Hibranate mapping type,
 7. Configurations required to create new project in tomcat- cong file name
 8. DDL and DML
