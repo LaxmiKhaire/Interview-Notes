@@ -372,6 +372,13 @@ Spring Boot ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	POST is always for creating a resource ( does not matter if it was duplicated )
 	PUT is for checking if resource exists then update, else create new resource
 	PATCH is always for updating a resource
+	POST - Create NEW record
+
+PUT - If the record exists, update else, create a new record
+PATCH - update
+GET - read
+DELETE - delete
+
 6. Hibranate mapping type,
 7. Configurations required to create new project in tomcat- cong file name
 8. DDL and DML
