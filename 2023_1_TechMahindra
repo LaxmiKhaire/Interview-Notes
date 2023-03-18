@@ -1,0 +1,14 @@
+Level 1 Interview
+
+1. About you
+2. what is Arithmetic exception & Number format Exception
+3. Expection handling in spring ---@ExceptionHandler nd all
+4. All steps required for String boot application
+5. methods - get put post, patch
+6. how to create immutable class
+7. can we have the private constructor inside the immutable class
+8. if yes, how we can create the object and how many we can create
+9. retrive the email of all employee whoes department Id is 1 from list of employee
+10. 
+
+Program to reverse the String using recursion
