@@ -1,0 +1,31 @@
+
+synchronized public void ReserveSeat(){
+	// 
+}
+
+Employee - name
+
+select * from Employee where name like "l%"
+
+
+ArrayList<String> list=new ArrayList<>();
+//HashSet<String> hs=new HashSet<>();
+
+list.stream().filter(s -> s.)
+
+for(String s:list){
+	if(!hs.add(s)){
+		sop(s);
+		//list.add("1");
+	}
+} 
+
+interface A{
+void display();
+displayfirstname()
+}
+
+100 class are implemenntting this interfac
+
+
+
