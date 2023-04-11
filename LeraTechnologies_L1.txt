@@ -1,0 +1,19 @@
+
+Employee list -> first name ,last name , salary
+
+list.stream().filter(e -> e.getSalary > 30000).collect(Collectors.toList());
+
+
+csv file -> json
+
+
+FileInputStream inputFile=new FileInputStream("path to csv file");
+
+
+5 threads
+method() -- only 5 times
+
+
+
+
+
