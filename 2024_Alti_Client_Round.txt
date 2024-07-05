@@ -1,0 +1,265 @@
+kevel :
+1. what is solid principles explain with example and explain where you implementation in your previous project.
+ 
+2. which algorithm garbage collector used in java and why ? explain how it works.
+ 
+3. what is arraylist and what is it's complexity. complexity of arraylist for search based on index is o(1) but if i want to search any element then we have to traverse it right so it will be o(n) which is same as linked list search complexity. but still why linked list is slow than arraylist while traversing in it.
+ 
+4. what happened if string will not be immutable in java? others immutable claases in java apart from string and how string is different from other immutable classes in java.
+ 
+5. how do make global exception in spring boot?
+ 
+if you make it does it will work everywhere in application?
+ 
+if yes then what happen in case of filters? does it will work in filters?
+ 
+6. how filter work and when it will call?
+ 
+methods of filter and their parameters.
+ 
+how filter's doFilter() method parameter works.
+ 
+8.ServletRequest is mutable or immutable? why.
+ 
+as we know wservlet request/response interface has methods like setParametr etc so how it get set if it is immutable?
+ 
+9. explain servlets and how it will work.
+ 
+10. make custome annotation.
+ 
+what is retentionPolicy & ElementType which using while we making custom annotations and what is it's values, explain all values with example.
+ 
+11. what is default method?
+ 
+a. make one interface A with default method abc() and make 2 another interface  B and C with same default methods which implement interface A
+ 
+how do make call A interface default method from interface B.
+ 
+b. now make one interface D with same default method which implement interface B. now how do call interface A default method from interface D.
+ 
+---------------------------------------------
+1 ) what collection will be used for Toll plaza on road for cars, which Collection need to used.
+ 
+2 ) Why List in interface in java.
+ 
+3 ) What is synchronization , tell the syntex.
+ 
+4 ) How to use Swaggerfile in project.
+ 
+5 ) Tell the diff for below
+ 
+    Integer i=new Integer("5");
+ 
+    Integer i1=25;
+ 
+6 ) spring boot global exceptions based question.
+ 
+7 ) Real time example of Singleton Pattern.
+ 
+8 ) Solid principle.
+ 
+9 ) Rest service project development.
+ 
+10) What is the diff between Wrapper class and Primitive class.
+ 
+---------------------------------------
+1. Exception handling in springboot
+ 
+2. how to handle exception in filter and how filter work in servlet
+ 
+3. How to get response body in filter
+ 
+4. given one scenario like we required date in specific format in each module for every functionality so how we can define it.
+ 
+5. custom annotation and what @Target is doing in it
+ 
+6. same like a String design pattern which another design pattern works
+ 
+7. suppose we have 100 records on service level and some records already present in db from that 100 records, now we need to find best way to store remaining new records in mongodb without finding one by one record from db (do this in scheduler job)
+ 
+8. how to identify accurate logs for exception as raised by client from huge logs
+ 
+9. where we use singleton design pattern apart from database
+ 
+-------------------------------------------------------
+1. Solid principles
+ 
+2. how to handle global exceptions
+ 
+3. One scenario based question related to a collection, suppose there is toll booth whrere multiple car was passing by, and threre is ambulance with having high priority which needs 4. to be passed first which collection do you use.
+ 
+5. Explain Dependency Inversion Principle with example
+ 
+6. Role based authorization explain with example.
+ 
+7. What string intern method do.
+ 
+--------------------------------------------------------------------------------------------------
+ 
+1. Advantages and disadvantages of Micro service architecture And Monolithic
+2. Implementation of CRUD operations using rest api
+3. How API can accept Different format of input json and xml
+4. Different between post vs put vs patch
+ 
+1. What is sterotypes ? Can we replace @Service with @Repository . Difference between @Service and @Repository. 
+2. Kafka : Where you use ? topic, partition, consumer, 
+3. how to create partition , consumer for partition.
+4. Final key word
+5. Why strings are immutable? Is strings thread-safe and how to ensure thread-safety with example?
+6. if multiple thread modifying  in same string
+7.	Write Program
+		1.Palindrome string
+		2.Remove element from array by index
+**********************************************************************************************
+***********************************************************************************************
+ 
+Amol:
+ 
+1. Immutability in java , create custom immutable class.
+ 
+2. Singleton class , double locking singleton , BigFog Singleton
+ 
+3. Producer consumer problem using code. wait, notify and notifyAll
+ 
+4. difference in synchronized method and block
+ 
+5. Java 8 Functional Interface , purpose of default and static method in FI.
+ 
+6. Difference in abstract class and Interfcae after java8.
+ 
+7. print 1st repeating character in string.
+ 
+8. [{]}  - balanced paranthesis problem.
+ 
+9. Create a Binary tree , search node in Binary Tree.
+ 
+10. count of each character in string using java8.
+ 
+11.Spring boot entire request flow .
+ 
+12. Swaggerfile
+ 
+13. CRUD employee endpoints
+ 
+14. How to create db connection in spring boot for mongodb
+ 
+15. Kafka basics
+ 
+16. Spring boot annotaions , exeption handling
+ 
+17. Microservices basic question - communication , etc
+ 
+18 . Deployment architecture , uDeploy
+ 
+----------------------------------------------------------------------------------------
+1. what is idempotency in java (not for HTTP Methods)
+ 
+2. check anagram Strings s1 = abcd String s2 = badc
+ 
+3. [{]}  - balanced paranthesis problem
+ 
+4. double locking singleton
+ 
+5. synchronized method vs synchronized block, which one is better
+ 
+5. use functional interface
+ 
+6. use of Anonymous classes
+ 
+7. comparable vs comparator
+ 
+8. Sort Employee list by name and salary both using streams.
+ 
+9. flow of spring boot request, what are the layers involved in that flow.
+ 
+10. what validations done in the filters  
+ 
+11. List down the endpoints  which can be creatd for Employee
+ 
+12. what is better way to send id in the request for get api
+ 
+13. If we need to send data to api in a JSON and xml in both format, how we can do that.
+ 
+**********************************************************************************************
+***********************************************************************************************
+ 
+navneet:
+	1. What is sterotypes ? Can we replace @Service with @Repository . What is @Controller and @RestController
+ 
+	2. Apache Kafka . How  microservices connected to the same topic will know that message is already being consumed by
+ 
+	3. Can we map all Rest methods to same endpoint
+ 
+	4. what are different Http status code . what is 429 202, 201
+ 
+	5. arrayList create custom method to remove specific elememnt from it ?
+ 
+	6. he has shown some code examples to identify output and which concept used behind it like Abstract class and another class extending it, what will be output ??   
+ 
+	7. find second highest salary from employee table
+ 
+	8. how microservices communicate with each other
+ 
+---------------------------------------
+	1.post and patch -use of patch
+ 
+	2.same endpoint for all mappings
+ 
+	3.design employee and dept rest endpoint
+ 
+	4.multithreading
+ 
+	5.arraylist index based searching
+ 
+	6.kafka partitions-many inter related questions on kafaka
+ 
+------------------------------------------
+	1) Tell me about yourself.
+ 
+	2) Explain your previous project and what tech stack you used.
+ 
+	3) Explain the deployment architecture in your previous project.
+ 
+	4) How did you fix the performance issue in production earlier?
+ 
+	5) How to create multithreading with shared memory, write code, and explain the steps
+ 
+	6) difference between the post method and the patch method
+ 
+	7) How to create a rest endpoint for CURD operation (employee and department table)
+ 
+	8) We have two ArrayLists A and B.
+ 
+	ArrayList A contains 1 to 10 values.
+ 
+	ArrayList B contains the index value 1 4 9.
+ 
+	We have to remove data from ArrayList A based on the ArrayList B index value. How will you write the logic?
+ 
+**********************************************************************************************
+***********************************************************************************************
+Niripam: 
+1. Project Flow end to end
+2. Architecture of project
+3. Which tech stack used and how
+4. What happens each and every step of project 
+5. Explain working of each module in project where you worked
+6. What is hashmap how it works internally 
+7. How two objects with same hash value stored
+8. what is hash collision
+9. Why rehasing is done
+10. Spring bean scopes
+11. Explain each scope and what is does
+12. where in actual singleton and prototype bean used in your project
+13. Find longest substring from given string
+ 
+what is purpose of filters
+How will handle security in Filter
+How do you configure a filter using annotations?
+How can you ensure a filter is executed only once per request?
+difference between delete and truncate
+select first two highest percentage of students from student table
+what is idempotency
+which Http Methods are idempotent which Methods are not idempotent
+how client can determine or ensure idempotency
+what is Blocked Queue
