@@ -1,0 +1,18 @@
+1. Group the Employees by city.
+2. Group the Employees by age.
+3. Find the count of male and female employees present in the organization.
+4. Print the names of all departments in the organization.
+5. Print employee details whose age is greater than 28.
+6. Find maximum age of employee.
+7. Print Average age of Male and Female Employees.
+8. Print the number of employees in each department.
+9. Find oldest employee.
+10. Find youngest female employee.
+11. Find employees whose age is greater than 30 and less than 30.
+12. Find the department name which has the highest number of employees.
+13. Find if there any employees from HR Department.
+14. Find the department names that these employees work for, where the number of employees in the department is over 3.
+15 . Find distinct department names that employees work for.
+
+
+

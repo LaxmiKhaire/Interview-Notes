@@ -1,0 +1,95 @@
+1. Employee > id,name, dept
+
+output -> map<dept,numOfEmp>
+
+solution->
+Map<Object, List<Employee>> mapEmp= 
+				elist.stream().filter(e -> e.getDept() != null)
+		.collect(Collectors.groupingBy(e->e.getDept()));
+		
+
+2. how we can load data initially in spring while before loading the application
+solution1-> Create class using @Configuration annotation and exten CommandLineRunner
+
+@Component
+public class DataLoader implements CommandLineRunner {
+
+	
+    private final ProductRepository userRepository;
+
+    public DataLoader(ProductRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        // Load initial data into the database
+        userRepository.save(new Product(101,"Raj Kumar", 100));
+        userRepository.save(new Product(102,"Eswar", 200));
+    }
+}
+
+solution2 -> create class using @Configuration annotation nd call custom class
+@Configuration
+public class DataLoader  {
+	
+	
+	@Bean
+    @Scope(value="singleton")
+    public MyBean myBean() {
+	return new MyBean();
+    }
+
+}
+
+-----
+
+public class MyBean {
+
+	@Autowired
+	 private ProductRepository userRepository;
+	public MyBean() {
+		System.err.println("MyBean instance created");
+	}
+	@PostConstruct
+	private void init() {
+		System.err.println("Verifying Resources");
+		userRepository.save(new Product(103,"Abc", 100));
+      userRepository.save(new Product(1104,"Xyz", 200));
+	}
+	@PreDestroy
+	private void shutdown() {
+		System.err.println("Shutdown All Resources");
+	}
+	public void close() {
+		System.err.println("Closing All Resources");
+	}
+}
+
+
+
+*custom datasource creation in Spring Boot
+
+To configure your own DataSource , define a @Bean of that type in your configuration. Spring Boot reuses your DataSource anywhere one is required, including database initialization
+
+@Configuration
+public class DataSourceConfig {
+    
+    @Bean
+    public DataSource getDataSource() {
+        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+        dataSourceBuilder.driverClassName("org.h2.Driver");
+        dataSourceBuilder.url("jdbc:h2:mem:test");
+        dataSourceBuilder.username("SA");
+        dataSourceBuilder.password("");
+        return dataSourceBuilder.build();
+    }
+}
+*when we create custom datasource how to tell spring not to create default data source
+
+
+*Microservice design pattern
+
+* method overridning method calls
+
+

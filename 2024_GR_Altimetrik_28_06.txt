@@ -1,0 +1,31 @@
+1.Internal working of Hashmap
+
+2. Hash collusion
+when for two diff keys produced hashcode is same 
+
+3. in java 8 what is diff in hashmap working
+Why optional class introduced in java 8
+
+4. HTTP methods and what is difference at repository level.
+which methods are used at repository level for each http method like for post - save 
+
+put
+patch
+get
+delete
+
+5. Inttermidate operation output and terminal operation op
+what are Inttermidate and terminal methods
+
+6. Can we add any other mmethods in functional interface
+->satatic and default
+
+7.Microservices -> 
+what is microservice
+how it is diff from monolithic arch
+what are disadvantages of microservices
+if any service is down what we happen and we can handle that sutituation
+what is loadbalancer
+what is messaging queue
+
+8. custom annotations
