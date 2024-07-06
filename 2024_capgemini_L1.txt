@@ -1,0 +1,36 @@
+**how to call custom exception
+CustomException -> extends Exception
+ChildCustomException ->
+throw new ChildCustomException();
+
+**is this correct?->
+try{
+ 
+ 
+}
+Catch(Excep e){}
+Catch(Null ne){}
+
+try with resource -> how java internally handles the closing of resource
+
+try(FileInputStream )
+-> AutoCloseable(extends Closeable) interface. FIleInputStream internally implements these interfaces
+
+
+**how we can hanlde multiple primary key in repository
+Product -id,namr, manu year, manu time
+primarykey -id+name+
+-> @Embeddable
+and @IdClass(CustomClass.class)
+
+
+**wrong 
+@Reporsitory
+interface ProductRepository extends JpaRepository<Integer,Product>{ (Product,Integer)
+	public Product findByName(String)
+}
+
+Cloud platforms and microserverices
+
+
+
